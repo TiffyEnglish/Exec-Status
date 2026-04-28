@@ -13,6 +13,8 @@ MANUAL_PUBLISH.md                  # How to physically publish rendered HTML
 data/transcripts/README.md        # Naming rules for synced meeting notes
 ```
 
+**Product table columns:** Feature → Owner → **Status** (`statusLabel` chip, or roll-up from `statusStages`) → **Work** (completed / in progress / not-started groupings via `statusStages` + free `bullets`) → **Jira** (keys, %, ETC only) → **Target** (feature `targetDate` plus each `jiraIssues[].targetDate`).
+
 ## Quick render
 
 ```powershell
