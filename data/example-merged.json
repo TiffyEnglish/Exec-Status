@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generatedAt": "2026-04-28T12:00:00.000Z",
+    "generatedAt": "2026-04-28T18:00:00.000Z",
     "source": "manual",
-    "jiraQuerySummary": "Replace after running PLAYBOOK.md JQL via Atlassian MCP.",
-    "transcriptPaths": ["data/transcripts/README.md"]
+    "jiraQuerySummary": "Sample data from executive deck screenshots — not connected to live Jira.",
+    "transcriptPaths": []
   },
   "legend": {
     "doneLabel": "Done / Released",
@@ -35,6 +35,48 @@
             "targetDate": "TBD",
             "links": [],
             "jiraIssues": []
+          },
+          {
+            "id": "meal_analysis",
+            "name": "Meal Analysis",
+            "owners": ["TE"],
+            "statusStages": [
+              {
+                "stage": "in_progress",
+                "bullets": ["Received feedback on ingredients / estimates"]
+              }
+            ],
+            "targetDate": "TBD",
+            "links": [],
+            "jiraIssues": []
+          },
+          {
+            "id": "ask_jai",
+            "name": "Ask Jai",
+            "owners": ["TE"],
+            "statusStages": [
+              {
+                "stage": "next",
+                "bullets": ["Improving prompts for summaries / prep"]
+              }
+            ],
+            "targetDate": "TBD",
+            "links": [],
+            "jiraIssues": []
+          },
+          {
+            "id": "notes_autofill",
+            "name": "Notes Autofill",
+            "owners": ["SS"],
+            "statusStages": [
+              {
+                "stage": "done",
+                "bullets": ["Updated coaching notes prompts"]
+              }
+            ],
+            "targetDate": "Feb 11",
+            "links": [],
+            "jiraIssues": []
           }
         ]
       },
@@ -44,7 +86,7 @@
         "theme": "blue",
         "rows": [
           {
-            "id": "example_feature",
+            "id": "validic_inform",
             "name": "Validic Inform",
             "statusLabel": "In Dev",
             "owners": ["SY", "TE"],
@@ -52,13 +94,115 @@
             "jiraIssues": [
               {
                 "key": "NCW-87802",
-                "summary": "",
-                "status": "",
+                "summary": "47 story points tracked in Jira",
+                "status": "In Progress",
                 "percentComplete": 94,
                 "etc": 3
               }
             ],
-            "targetDate": "2026-03-11",
+            "targetDate": "Mar 11",
+            "links": []
+          },
+          {
+            "id": "new_tracker_model",
+            "name": "New Tracker Model",
+            "statusLabel": "In Dev",
+            "owners": ["XL", "JG", "TE"],
+            "bullets": [],
+            "jiraIssues": [
+              {
+                "key": "NCW-87854",
+                "percentComplete": 17,
+                "etc": 12,
+                "targetDate": "Mar 25"
+              },
+              {
+                "key": "NCW-87871",
+                "percentComplete": 44,
+                "etc": 6,
+                "targetDate": "Mar 27"
+              },
+              {
+                "key": "NCW-87890",
+                "percentComplete": 100,
+                "etc": null,
+                "targetDate": "Apr 15"
+              },
+              {
+                "key": "NCW-87940",
+                "percentComplete": 72,
+                "etc": 4,
+                "targetDate": "Apr 1"
+              },
+              {
+                "key": "NCW-88017",
+                "percentComplete": 35,
+                "etc": 8,
+                "targetDate": "Apr 22"
+              }
+            ],
+            "targetDate": "",
+            "links": []
+          },
+          {
+            "id": "epic_ucsdh",
+            "name": "Epic @ UCSDH",
+            "statusLabel": "Live",
+            "owners": ["JG", "SG"],
+            "statusStages": [
+              {
+                "stage": "next",
+                "bullets": ["Next: data sync follow-ups"]
+              }
+            ],
+            "jiraIssues": [
+              {
+                "key": "SHC-134",
+                "percentComplete": 72,
+                "etc": null
+              }
+            ],
+            "targetDate": "",
+            "links": []
+          },
+          {
+            "id": "manage_nutrition_targets",
+            "name": "Manage Nutrition Targets",
+            "statusLabel": "In Design",
+            "owners": ["TE", "SS"],
+            "bullets": [],
+            "jiraIssues": [],
+            "targetDate": "",
+            "links": [
+              {
+                "label": "View Design",
+                "href": "https://example.com/designs/nutrition-targets"
+              }
+            ]
+          },
+          {
+            "id": "ui_improvements",
+            "name": "UI Improvements",
+            "statusLabel": "In Design",
+            "owners": ["TE"],
+            "bullets": [],
+            "jiraIssues": [],
+            "targetDate": "",
+            "links": [
+              {
+                "label": "View Progress",
+                "href": "https://example.com/status/ui-improvements"
+              }
+            ]
+          },
+          {
+            "id": "epic_uhn",
+            "name": "Epic @ UHN",
+            "statusLabel": "In Progress",
+            "owners": ["SY", "SG"],
+            "bullets": ["UHN estimate: Large (55)"],
+            "jiraIssues": [],
+            "targetDate": "",
             "links": []
           }
         ]
@@ -76,16 +220,52 @@
           {
             "id": "ucsdh_wm",
             "name": "UCSDH – WM",
-            "serviceTier": "Premium with Jai",
+            "serviceTier": "Quick Start",
             "owners": ["SS"],
             "bullets": [
-              "Recruitment status …",
-              "Dashboard updates …",
-              "Meeting scheduled Apr 9"
+              "Recruitment status (162 invited)",
+              "Dashboard updates in progress",
+              "Steering meeting scheduled for April 9"
             ],
             "targetDate": "Live as of Jan 13",
             "jiraIssues": [],
+            "links": [
+              {
+                "label": "View Dashboard",
+                "href": "https://example.com/dashboard/ucsdh-wm"
+              }
+            ]
+          },
+          {
+            "id": "abode_nac",
+            "name": "ABODE NAC",
+            "serviceTier": "Custom + Dev",
+            "owners": ["GY"],
+            "bullets": [
+              "Configuration complete",
+              "Enrollment date TBD"
+            ],
+            "targetDate": "TBD",
+            "jiraIssues": [],
             "links": []
+          },
+          {
+            "id": "baszucki_camh",
+            "name": "Baszucki / CAMH – Keto Program",
+            "serviceTier": "Custom + Dev",
+            "owners": ["TE", "JG"],
+            "bullets": [
+              "Program flow reviewed March 20 (see status deck)",
+              "Ongoing work for protocol design"
+            ],
+            "targetDate": "Go Live: April 2026",
+            "jiraIssues": [],
+            "links": [
+              {
+                "label": "Status deck",
+                "href": "https://example.com/decks/camh-keto"
+              }
+            ]
           }
         ]
       },
@@ -95,12 +275,48 @@
         "theme": "green",
         "rows": [
           {
-            "id": "live_active_placeholder",
-            "name": "(Add rows)",
-            "serviceTier": "",
-            "owners": [],
-            "bullets": [],
+            "id": "prehabrx",
+            "name": "PrehabRx",
+            "serviceTier": "Custom + Dev",
+            "owners": ["SG"],
+            "bullets": [
+              "New custom fields promoted to production March 31",
+              "Dashboard updated"
+            ],
             "targetDate": "",
+            "availabilityNotes": "Available Days: 3",
+            "jiraIssues": [],
+            "links": []
+          },
+          {
+            "id": "ucsd_coach",
+            "name": "UCSD COACH – BH, T2DM, HTN",
+            "serviceTier": "Premium with Jai",
+            "owners": ["SS", "TE"],
+            "bullets": [
+              "Epic integration live as of Feb 26 (see dev status)"
+            ],
+            "targetDate": "",
+            "availabilityNotes": "Available Days: 3",
+            "jiraIssues": [],
+            "links": [
+              {
+                "label": "Dev status",
+                "href": "https://example.com/status/ucsd-coach"
+              }
+            ]
+          },
+          {
+            "id": "uhn_shareclinic",
+            "name": "UHN – SHAREclinic SHC",
+            "serviceTier": "Custom + Dev",
+            "owners": ["SY", "SG"],
+            "bullets": [
+              "Epic integration progressing",
+              "New workflow shared March 6"
+            ],
+            "targetDate": "",
+            "availabilityNotes": "Available Days: 1",
             "jiraIssues": [],
             "links": []
           }
@@ -112,12 +328,56 @@
         "theme": "purple",
         "rows": [
           {
-            "id": "maintenance_placeholder",
-            "name": "(Add rows)",
-            "serviceTier": "",
-            "owners": [],
-            "bullets": [],
+            "id": "uhn_peer_nav",
+            "name": "UHN – Peer Navigation",
+            "serviceTier": "Quick Start",
+            "owners": ["SG"],
+            "bullets": [
+              "Privacy and security assessment in progress"
+            ],
             "targetDate": "",
+            "availabilityNotes": "Available Days: 2",
+            "jiraIssues": [],
+            "links": []
+          },
+          {
+            "id": "gotodoctor",
+            "name": "GoToDoctor",
+            "serviceTier": "Custom + Dev",
+            "owners": ["GY"],
+            "bullets": [
+              "Ongoing support",
+              "UAT completed; new content promoted to production"
+            ],
+            "targetDate": "",
+            "availabilityNotes": "",
+            "jiraIssues": [],
+            "links": []
+          },
+          {
+            "id": "zealcare",
+            "name": "ZealCare",
+            "serviceTier": "Custom + Dev",
+            "owners": ["TE"],
+            "bullets": [
+              "Next check-in scheduled for April 30",
+              "Dashboard updated with utilization metrics"
+            ],
+            "targetDate": "",
+            "availabilityNotes": "Available Days: 1.5",
+            "jiraIssues": [],
+            "links": []
+          },
+          {
+            "id": "better_for_all",
+            "name": "Better For All",
+            "serviceTier": "Custom + Dev",
+            "owners": ["SS"],
+            "bullets": [
+              "Updating custom fields for the evaluation team"
+            ],
+            "targetDate": "",
+            "availabilityNotes": "Available Days: 2",
             "jiraIssues": [],
             "links": []
           }

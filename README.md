@@ -4,7 +4,7 @@ HTML-first replacements for Nexi executive **Product Status** & **Client Project
 
 ```
 schema/status-report.schema.json   # Canonical shape
-data/example-merged.json            # Skeleton + sample rows
+data/example-merged.json            # Screenshot-based sample data for layout review before Jira/transcripts
 scripts/render.mjs                # Generates dist/status.html
 styles/report.css                  # Themes (green / blue / purple bands)
 PLAYBOOK.md                        # MCP Jira queries + Cursor workflow

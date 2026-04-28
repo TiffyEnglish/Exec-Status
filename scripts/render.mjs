@@ -41,10 +41,14 @@ function linksHtml(links = []) {
 function issueLine(issue) {
   const prefix = process.env.JIRA_BASE_URL || 'https://your-domain.atlassian.net/browse/';
   const href = `${String(prefix).replace(/\/?$/, '/')}${issue.key}`;
-  const pct = issue.percentComplete != null ? `${issue.percentComplete}%` : '';
+  const pct =
+    issue.percentComplete != null ? `${issue.percentComplete}%` : '';
   const etc = issue.etc != null ? `${issue.etc} ETC` : '';
   const parts = [pct, etc].filter(Boolean);
-  const suffix = parts.length ? ` (${parts.join(', ')})` : '';
+  let suffix = parts.length ? ` (${parts.join(', ')})` : '';
+  if (issue.targetDate) {
+    suffix += ` — ${issue.targetDate}`;
+  }
   return `<div class="jira-lines"><code><a href="${esc(href)}">${esc(issue.key)}</a></code>${esc(suffix)}</div>`;
 }
 
