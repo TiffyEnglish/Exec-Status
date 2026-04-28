@@ -1,0 +1,10 @@
+# Local transcript copies (contain confidential dialogue)
+/data/transcripts/*
+!/data/transcripts/README.md
+
+# Generated output — run `npm run render` before publish if not committing HTML
+/dist/
+
+.env
+.env.local
+node_modules/

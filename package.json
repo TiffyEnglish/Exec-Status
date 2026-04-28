@@ -1,0 +1,11 @@
+{
+  "name": "exec-status-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Phase 1 executive HTML status: Jira + meeting notes (merged JSON → dist/status.html)",
+  "scripts": {
+    "render": "node scripts/render.mjs",
+    "render:example": "node scripts/render.mjs data/example-merged.json"
+  }
+}

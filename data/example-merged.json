@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "generatedAt": "2026-04-28T12:00:00.000Z",
+    "source": "manual",
+    "jiraQuerySummary": "Replace after running PLAYBOOK.md JQL via Atlassian MCP.",
+    "transcriptPaths": ["data/transcripts/README.md"]
+  },
+  "legend": {
+    "doneLabel": "Done / Released",
+    "inProgressLabel": "In Progress",
+    "nextLabel": "Next"
+  },
+  "productReport": {
+    "title": "Product Status Report",
+    "sections": [
+      {
+        "id": "live_ai_features",
+        "label": "Live AI Features",
+        "theme": "green",
+        "rows": [
+          {
+            "id": "suggest_reply",
+            "name": "Suggest Reply",
+            "owners": ["TE"],
+            "statusStages": [
+              {
+                "stage": "in_progress",
+                "bullets": ["Investigating GPT models"]
+              },
+              {
+                "stage": "next",
+                "bullets": ["Resolving time change issues"]
+              }
+            ],
+            "targetDate": "TBD",
+            "links": [],
+            "jiraIssues": []
+          }
+        ]
+      },
+      {
+        "id": "in_design_dev",
+        "label": "In Design / Development",
+        "theme": "blue",
+        "rows": [
+          {
+            "id": "example_feature",
+            "name": "Validic Inform",
+            "statusLabel": "In Dev",
+            "owners": ["SY", "TE"],
+            "bullets": [],
+            "jiraIssues": [
+              {
+                "key": "NCW-87802",
+                "summary": "",
+                "status": "",
+                "percentComplete": 94,
+                "etc": 3
+              }
+            ],
+            "targetDate": "2026-03-11",
+            "links": []
+          }
+        ]
+      }
+    ]
+  },
+  "clientReport": {
+    "title": "Client Project Status Report",
+    "sections": [
+      {
+        "id": "in_config_dev",
+        "label": "In Config / Development",
+        "theme": "blue",
+        "rows": [
+          {
+            "id": "ucsdh_wm",
+            "name": "UCSDH – WM",
+            "serviceTier": "Premium with Jai",
+            "owners": ["SS"],
+            "bullets": [
+              "Recruitment status …",
+              "Dashboard updates …",
+              "Meeting scheduled Apr 9"
+            ],
+            "targetDate": "Live as of Jan 13",
+            "jiraIssues": [],
+            "links": []
+          }
+        ]
+      },
+      {
+        "id": "live_active",
+        "label": "Live & Active Project",
+        "theme": "green",
+        "rows": [
+          {
+            "id": "live_active_placeholder",
+            "name": "(Add rows)",
+            "serviceTier": "",
+            "owners": [],
+            "bullets": [],
+            "targetDate": "",
+            "jiraIssues": [],
+            "links": []
+          }
+        ]
+      },
+      {
+        "id": "in_maintenance",
+        "label": "In Maintenance (with new updates)",
+        "theme": "purple",
+        "rows": [
+          {
+            "id": "maintenance_placeholder",
+            "name": "(Add rows)",
+            "serviceTier": "",
+            "owners": [],
+            "bullets": [],
+            "targetDate": "",
+            "jiraIssues": [],
+            "links": []
+          }
+        ]
+      }
+    ]
+  }
+}

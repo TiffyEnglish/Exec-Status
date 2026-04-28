@@ -1,0 +1,220 @@
+:root {
+  --green-header: #1b5e20;
+  --green-band: #e8f5e9;
+  --blue-header: #1565c0;
+  --blue-band: #e3f2fd;
+  --purple-header: #6a1b9a;
+  --purple-band: #f3e5f5;
+  --muted: #f5f5f5;
+  --text: #111;
+  --border: #ccc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Segoe UI, system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: #fff;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem 3rem;
+}
+
+header.report-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #ddd;
+}
+
+header.report-header h1 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.meta-line {
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.legend {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0.75rem 0 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.legend span.item::before {
+  margin-right: 0.35rem;
+}
+
+.legend .done::before {
+  content: "\2713";
+}
+
+.legend .inprog::before {
+  content: "\25cf";
+}
+
+.legend .next::before {
+  content: "\274f";
+}
+
+section.report-section {
+  margin-top: 1.25rem;
+}
+
+.section-banner {
+  color: #fff;
+  padding: 0.4rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.section-banner.green {
+  background: var(--green-header);
+}
+
+.section-banner.blue {
+  background: var(--blue-header);
+}
+
+.section-banner.purple {
+  background: var(--purple-header);
+}
+
+.section-banner.neutral {
+  background: #444;
+}
+
+table.status-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+}
+
+.status-table thead th.col-name {
+  width: 22%;
+}
+
+.status-table thead th.col-service {
+  width: 14%;
+}
+
+.status-table thead th.col-owner {
+  width: 8%;
+}
+
+.status-table thead th.col-status {
+  width: 14%;
+}
+
+.status-table thead th.col-updates {
+  width: auto;
+}
+
+.status-table thead th.col-timeline {
+  width: 16%;
+}
+
+.status-table th,
+.status-table td {
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+}
+
+.status-table thead th {
+  background: #fafafa;
+  font-weight: 600;
+}
+
+.band.green .status-table tbody tr:nth-child(even),
+.band.green .product-row:nth-child(even) {
+  background: var(--green-band);
+}
+
+.band.blue .status-table tbody tr:nth-child(even),
+.band.blue .product-row:nth-child(even) {
+  background: var(--blue-band);
+}
+
+.band.purple .status-table tbody tr:nth-child(even),
+.band.purple .product-row:nth-child(even) {
+  background: var(--purple-band);
+}
+
+.col-service-cell {
+  background: var(--muted);
+}
+
+.cell-owners {
+  white-space: nowrap;
+}
+
+.stage-block {
+  margin: 0.15rem 0 0.35rem;
+}
+
+.stage-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #555;
+}
+
+ul.tight {
+  margin: 0.2rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+.chip-live {
+  background: #e8f5e9;
+  color: var(--green-header);
+}
+
+.chip-dev {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+
+.jira-lines {
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+}
+
+.jira-lines code {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0 0.25rem;
+}
+
+.links a {
+  color: var(--blue-header);
+}
+
+footer.confidential {
+  margin-top: 2rem;
+  font-size: 0.72rem;
+  color: #666;
+}

@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexi.example/schema/status-report.schema.json",
+  "title": "ExecutiveStatusReport",
+  "description": "Phase 1 merged model for Product Status + Client Project Status HTML. Jira fields map to jiraIssue refs; meeting text maps to meetingNotes.",
+  "type": "object",
+  "required": ["meta", "productReport", "clientReport"],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["generatedAt", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp when this JSON was last produced."
+        },
+        "source": {
+          "type": "string",
+          "enum": ["cursor-session", "manual", "script"],
+          "description": "How this snapshot was built."
+        },
+        "jiraQuerySummary": {
+          "type": "string",
+          "description": "Short note of which JQL slices were used (for audit)."
+        },
+        "transcriptPaths": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Relative paths or labels of transcript files read this run."
+        }
+      }
+    },
+    "legend": {
+      "type": "object",
+      "description": "Optional icon legend (Done / In Progress / Next).",
+      "additionalProperties": false,
+      "properties": {
+        "doneLabel": { "type": "string", "default": "Done / Released" },
+        "inProgressLabel": { "type": "string", "default": "In Progress" },
+        "nextLabel": { "type": "string", "default": "Next" }
+      }
+    },
+    "productReport": { "$ref": "#/$defs/report" },
+    "clientReport": { "$ref": "#/$defs/report" }
+  },
+  "$defs": {
+    "report": {
+      "type": "object",
+      "required": ["title", "sections"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string" },
+        "sections": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/section" }
+        }
+      }
+    },
+    "section": {
+      "type": "object",
+      "required": ["id", "label", "theme", "rows"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable id, e.g. live_ai, in_design_dev."
+        },
+        "label": {
+          "type": "string",
+          "description": "Header text shown on the slide section."
+        },
+        "theme": {
+          "type": "string",
+          "enum": ["green", "blue", "purple", "neutral"],
+          "description": "Maps to CSS theme for banded headers."
+        },
+        "rows": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/row" }
+        }
+      }
+    },
+    "row": {
+      "type": "object",
+      "required": ["id", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "description": "Stable key for merge, e.g. validic_inform." },
+        "name": { "type": "string", "description": "Feature or client / project name shown in column 1." },
+        "serviceTier": {
+          "type": ["string", "null"],
+          "description": "Client report: Quick Start, Custom + Dev, Premium with Jai, etc."
+        },
+        "statusLabel": {
+          "type": ["string", "null"],
+          "description": "Roll-up status chip: Live, In Dev, In Design, In Progress…"
+        },
+        "owners": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Initials / owner tokens, e.g. [\"TE\",\"SS\"]."
+        },
+        "statusStages": {
+          "type": "array",
+          "description": "Product report: Done / In Progress / Next bullets.",
+          "items": {
+            "type": "object",
+            "required": ["stage", "bullets"],
+            "additionalProperties": false,
+            "properties": {
+              "stage": { "type": "string", "enum": ["done", "in_progress", "next"] },
+              "bullets": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        },
+        "bullets": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Primary narrative bullets when not using statusStages."
+        },
+        "jiraIssues": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/jiraIssue" },
+          "description": "Optional child issues (e.g. multiple NCW keys under one feature)."
+        },
+        "links": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/hyperlink" }
+        },
+        "targetDate": { "type": ["string", "null"], "description": "Target or go-live label, ISO date or display string." },
+        "availabilityNotes": {
+          "type": ["string", "null"],
+          "description": "e.g. Available Days: 3"
+        },
+        "meetingNotes": {
+          "type": ["string", "null"],
+          "description": "Raw or summarized text from synced transcripts keyed to this row."
+        }
+      }
+    },
+    "jiraIssue": {
+      "type": "object",
+      "required": ["key"],
+      "additionalProperties": false,
+      "properties": {
+        "key": { "type": "string", "pattern": "^[A-Z][A-Z0-9]+-\\d+$" },
+        "summary": { "type": ["string", "null"] },
+        "status": { "type": ["string", "null"] },
+        "percentComplete": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "etc": {
+          "type": ["integer", "null"],
+          "description": "Escaped time / remaining story points placeholder—map from Jira as needed."
+        },
+        "targetDate": { "type": ["string", "null"] }
+      }
+    },
+    "hyperlink": {
+      "type": "object",
+      "required": ["label", "href"],
+      "additionalProperties": false,
+      "properties": {
+        "label": { "type": "string" },
+        "href": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}
