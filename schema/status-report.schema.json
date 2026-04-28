@@ -96,7 +96,7 @@
         },
         "statusLabel": {
           "type": ["string", "null"],
-          "description": "Roll-up status chip: Live, In Dev, In Design, In Progress…"
+          "description": "Product Status column (chip): Live, In Dev, In Design, In Progress… If omitted, a short roll-up is inferred from statusStages when possible."
         },
         "owners": {
           "type": "array",
@@ -105,7 +105,7 @@
         },
         "statusStages": {
           "type": "array",
-          "description": "Product report: Done / In Progress / Next bullets.",
+          "description": "Product Work column only — groups bullets into completed vs in-progress vs not-started/next. Separate from Status (statusLabel/chip).",
           "items": {
             "type": "object",
             "required": ["stage", "bullets"],
@@ -133,7 +133,10 @@
           "type": "array",
           "items": { "$ref": "#/$defs/hyperlink" }
         },
-        "targetDate": { "type": ["string", "null"], "description": "Target or go-live label, ISO date or display string." },
+        "targetDate": {
+          "type": ["string", "null"],
+          "description": "Feature-level milestone shown in Target column. Issue-level deadlines live under jiraIssues[].targetDate — rendered there, not appended to Jira column."
+        },
         "availabilityNotes": {
           "type": ["string", "null"],
           "description": "e.g. Available Days: 3"
@@ -157,7 +160,10 @@
           "type": ["integer", "null"],
           "description": "Escaped time / remaining story points placeholder—map from Jira as needed."
         },
-        "targetDate": { "type": ["string", "null"] }
+        "targetDate": {
+          "type": ["string", "null"],
+          "description": "Per-ticket target or due date; surfaced in the product Target column (not in the Jira column)."
+        }
       }
     },
     "hyperlink": {

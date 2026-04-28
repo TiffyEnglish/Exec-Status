@@ -107,26 +107,38 @@ table.status-table {
 }
 
 .status-table thead th.col-name {
-  width: 22%;
-}
-
-.status-table thead th.col-service {
-  width: 14%;
+  width: 18%;
 }
 
 .status-table thead th.col-owner {
-  width: 8%;
+  width: 7%;
 }
 
-.status-table thead th.col-status {
+.status-table.status-table-product thead th.col-product-status {
+  width: 10%;
+}
+
+.status-table.status-table-product thead th.col-work {
+  width: 26%;
+}
+
+.status-table.status-table-product thead th.col-jira {
+  width: 16%;
+}
+
+.status-table.status-table-product thead th.col-product-target {
+  width: 13%;
+}
+
+.status-table:not(.status-table-product) thead th.col-service {
   width: 14%;
 }
 
-.status-table thead th.col-updates {
-  width: auto;
+.status-table:not(.status-table-product) thead th.col-updates {
+  min-width: 32%;
 }
 
-.status-table thead th.col-timeline {
+.status-table:not(.status-table-product) thead th:last-child {
   width: 16%;
 }
 
@@ -197,6 +209,38 @@ ul.tight {
 .chip-dev {
   background: #e3f2fd;
   color: #0d47a1;
+}
+
+.chip-rollup {
+  background: #fafafa;
+  color: #424242;
+}
+
+.col-jira .jira-lines {
+  margin-top: 0;
+}
+
+.col-jira .jira-lines + .jira-lines {
+  margin-top: 0.35rem;
+}
+
+.product-target {
+  font-size: 0.88rem;
+}
+
+.target-feature {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.target-issues {
+  margin: 0.2rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.target-issues code {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0 0.2rem;
 }
 
 .jira-lines {

@@ -38,7 +38,8 @@ function linksHtml(links = []) {
     .join(' ');
 }
 
-function issueLine(issue) {
+function formatIssueTracking(issue, opts = {}) {
+  const includeIssueDates = opts.includeIssueDates !== false;
   const prefix = process.env.JIRA_BASE_URL || 'https://your-domain.atlassian.net/browse/';
   const href = `${String(prefix).replace(/\/?$/, '/')}${issue.key}`;
   const pct =
@@ -46,65 +47,122 @@ function issueLine(issue) {
   const etc = issue.etc != null ? `${issue.etc} ETC` : '';
   const parts = [pct, etc].filter(Boolean);
   let suffix = parts.length ? ` (${parts.join(', ')})` : '';
-  if (issue.targetDate) {
+  if (includeIssueDates && issue.targetDate) {
     suffix += ` — ${issue.targetDate}`;
   }
   return `<div class="jira-lines"><code><a href="${esc(href)}">${esc(issue.key)}</a></code>${esc(suffix)}</div>`;
 }
 
-function renderProductRow(row) {
-  const owners = esc((row.owners || []).join(' | ') || '');
-  let updates = '';
+/** Product Jira column: key, % and ETC only — dates moved to Target column. */
+function issueTrackingCompact(issue) {
+  return formatIssueTracking(issue, { includeIssueDates: false });
+}
+
+/** Roll-up label for Status when statusLabel omitted (derive from stages). */
+function stageRollupText(row) {
+  const stages = row.statusStages;
+  if (!stages?.length) return '';
+  const order = ['done', 'in_progress', 'next'];
+  const labels = {
+    done: 'Released',
+    in_progress: 'In progress',
+    next: 'Planned'
+  };
+  const unique = [...new Set(stages.map((s) => s.stage))].sort(
+    (a, b) => order.indexOf(a) - order.indexOf(b)
+  );
+  return unique.map((k) => labels[k] || k).join(' · ');
+}
+
+function renderWorkNarrativeOnly(row) {
+  let html = '';
 
   if (row.statusStages && row.statusStages.length) {
     for (const stage of row.statusStages) {
-      const tag =
-        stage.stage === 'done'
-          ? 'done'
-          : stage.stage === 'in_progress'
-            ? 'in-progress'
-            : 'next';
       const label =
-        tag === 'done'
-          ? 'Done'
-          : tag === 'in-progress'
+        stage.stage === 'done'
+          ? 'Done / released'
+          : stage.stage === 'in_progress'
             ? 'In progress'
-            : 'Next';
+            : 'Not started / next';
       const bullets =
         stage.bullets && stage.bullets.length
           ? `<ul class="tight">${stage.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>`
           : '';
-      updates += `<div class="stage-block"><span class="stage-tag">${esc(label)}</span>${bullets}</div>`;
+      html += `<div class="stage-block"><span class="stage-tag">${esc(label)}</span>${bullets}</div>`;
     }
   } else if (row.bullets && row.bullets.length) {
-    updates = `<ul class="tight">${row.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>`;
+    html = `<ul class="tight">${row.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>`;
   }
 
-  let jiras = '';
-  if (row.jiraIssues && row.jiraIssues.length) {
-    jiras = row.jiraIssues.map((i) => issueLine(i)).join('');
-  }
-
-  let meeting = '';
   if (row.meetingNotes) {
-    meeting = `<div class="stage-block"><span class="stage-tag">Meeting</span><div>${esc(row.meetingNotes)}</div></div>`;
+    html += `<div class="stage-block"><span class="stage-tag">Meeting</span><div>${esc(row.meetingNotes)}</div></div>`;
   }
 
-  let statusCell = '';
-  if (row.statusLabel) {
+  return html || '—';
+}
+
+function renderProductStatusCell(row) {
+  if (row.statusLabel && String(row.statusLabel).trim()) {
     const cls = String(row.statusLabel).toLowerCase().includes('live')
       ? 'chip-live'
       : 'chip-dev';
-    statusCell = `<span class="chip ${cls}">${esc(row.statusLabel)}</span>`;
+    return `<span class="chip ${cls}">${esc(row.statusLabel)}</span>`;
   }
+  const rollup = stageRollupText(row);
+  if (!rollup) {
+    return '—';
+  }
+  return `<span class="chip chip-rollup">${esc(rollup)}</span>`;
+}
+
+function renderProductTargetCell(row) {
+  const rowTarget =
+    row.targetDate != null && String(row.targetDate).trim() !== ''
+      ? String(row.targetDate).trim()
+      : '';
+
+  const datedIssues =
+    row.jiraIssues?.filter((i) => i.targetDate != null && String(i.targetDate).trim() !== '') ||
+    [];
+
+  const parts = [];
+  if (rowTarget) {
+    parts.push(`<div class="target-feature">${esc(rowTarget)}</div>`);
+  }
+  if (datedIssues.length) {
+    parts.push(
+      `<ul class="target-issues">${datedIssues.map(
+        (issue) =>
+          `<li><code>${esc(issue.key)}</code> · ${esc(String(issue.targetDate).trim())}</li>`
+      ).join('')}</ul>`
+    );
+  }
+
+  if (!parts.length) {
+    return '—';
+  }
+  return `<div class="product-target">${parts.join('')}</div>`;
+}
+
+function renderProductRow(row) {
+  const owners = esc((row.owners || []).join(' | ') || '');
+
+  const jiras =
+    row.jiraIssues && row.jiraIssues.length
+      ? row.jiraIssues.map((issue) => issueTrackingCompact(issue)).join('')
+      : '—';
 
   return `<tr class="product-row">
       <td>${esc(row.name)} ${linksHtml(row.links || [])}</td>
       <td class="cell-owners">${owners}</td>
-      <td>${updates}${statusCell ? `<div>${statusCell}</div>` : ''}${jiras}${meeting}</td>
-      <td>${esc(row.targetDate || '')}</td>
+      <td class="col-product-status">${renderProductStatusCell(row)}</td>
+      <td class="col-work">${renderWorkNarrativeOnly(row)}</td>
+      <td class="col-jira">${jiras}</td>
+      <td class="col-product-target">${renderProductTargetCell(row)}</td>
     </tr>`;
 }
+
 function renderClientRow(row, showServiceCol) {
   const owners = esc((row.owners || []).join(' | ') || '');
   let bullets =
@@ -113,7 +171,7 @@ function renderClientRow(row, showServiceCol) {
       : '';
   let jiras = '';
   if (row.jiraIssues && row.jiraIssues.length) {
-    jiras = row.jiraIssues.map((i) => issueLine(i)).join('');
+    jiras = row.jiraIssues.map((i) => formatIssueTracking(i)).join('');
   }
   if (row.meetingNotes) {
     bullets += `<div class="stage-block"><span class="stage-tag">Meeting</span><p>${esc(row.meetingNotes)}</p></div>`;
@@ -134,13 +192,15 @@ function renderSection(section, kind) {
     return `
     <section class="report-section band ${th}">
       <div class="section-banner ${th}">${esc(section.label)}</div>
-      <table class="status-table">
+      <table class="status-table status-table-product">
         <thead>
           <tr>
             <th class="col-name">Feature</th>
             <th class="col-owner">Owner</th>
-            <th class="col-updates">Status / detail</th>
-            <th class="col-timeline">Target</th>
+            <th class="col-product-status">Status</th>
+            <th class="col-work">Work</th>
+            <th class="col-jira">Jira</th>
+            <th class="col-product-target">Target</th>
           </tr>
         </thead>
         <tbody>
