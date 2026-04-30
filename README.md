@@ -6,6 +6,8 @@ HTML-first replacements for Nexi executive **Product Status** & **Client Project
 schema/status-report.schema.json   # Canonical shape
 data/example-merged.json            # Screenshot-based sample data for layout review before Jira/transcripts
 scripts/render.mjs                # Generates dist/status.html
+scripts/jira-sync-eaf.mjs         # npm run jira:eaf — REST Pull EAF | npm run jira:eaf:apply — apply MCP-built patch file
+scripts/jira-pull-percent-complete.mjs   # Optional legacy: write % from Jira
 styles/report.css                  # Themes (green / blue / purple bands)
 PLAYBOOK.md                        # MCP Jira queries + Cursor workflow
 RITUAL.md                          # Operational cadence
@@ -13,13 +15,13 @@ MANUAL_PUBLISH.md                  # How to physically publish rendered HTML
 data/transcripts/README.md        # Naming rules for synced meeting notes
 ```
 
-**Product table columns:** Feature → Owner → **Status** (`statusLabel` chip, or roll-up from `statusStages`) → **Work** (completed / in progress / not-started groupings via `statusStages` + free `bullets`) → **Jira** (keys, %, ETC only) → **Target** (feature `targetDate` plus each `jiraIssues[].targetDate`).
+**Product table columns:** Feature → Owner → **Status** (`statusLabel` chip, or roll-up from `statusStages`) → **Status updates** → **Jira** (non–In Development) → **ETC → % Cmp. → EAF** (**In Development** metric layout) → **Target** (optional row `targetDate`; per-issue **Wednesday** from **`jiraIssues[].todoCount`** / **`inProgressCount`** when set, else **`jiraIssues[].targetDate`**). **ETC** and **% Cmp.** (**% Complete**) derive at render from **`eaf`** (**Project EAF (Cached)** from Jira) and workload counts (see **PLAYBOOK.md**); prefer **Atlassian MCP** → **`data/jira-eaf-patch.json`** → **`npm run jira:eaf:apply`** (or **`npm run jira:eaf -- --patch …`**); REST **`npm run jira:eaf`** is the fallback when MCP isn’t available.
 
 ## Quick render
 
 ```powershell
 cd C:\Users\TiffanyEnglish\Projects\exec-status-site
-$env:JIRA_BASE_URL = "https://<YOUR>.atlassian.net/browse/"
+$env:JIRA_BASE_URL = "https://nexjhealth.atlassian.net/browse/"
 npm install   # noop unless you extend tooling later
 npm run render
 start dist/status.html   # sanity check

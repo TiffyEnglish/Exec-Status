@@ -1,9 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-04-28T18:00:00.000Z",
-    "source": "manual",
-    "jiraQuerySummary": "Sample data from executive deck screenshots — not connected to live Jira.",
-    "transcriptPaths": []
+    "generatedAt": "2026-04-30T20:00:00",
+    "source": "cursor-session",
+    "jiraQuerySummary": "In Development synced to filter **10566** — EAF from Jira MCP (`customfield_10178`) 2026-04-30.",
+    "transcriptPaths": [
+      "data/transcripts/2026-04-30__project-standup.txt",
+      "data/transcripts/2026-04-30__ai-team-touchpoint.txt"
+    ]
   },
   "legend": {
     "doneLabel": "Done / Released",
@@ -21,15 +24,21 @@
           {
             "id": "suggest_reply",
             "name": "Suggest Reply",
-            "owners": ["TE"],
+            "owners": [
+              "TE"
+            ],
             "statusStages": [
               {
                 "stage": "in_progress",
-                "bullets": ["Investigating GPT models"]
+                "bullets": [
+                  "Dash/ellipsis issues still appearing in suggestion copy."
+                ]
               },
               {
                 "stage": "next",
-                "bullets": ["Resolving time change issues"]
+                "bullets": [
+                  "New suggested-replies prompt in QA."
+                ]
               }
             ],
             "targetDate": "TBD",
@@ -39,25 +48,39 @@
           {
             "id": "meal_analysis",
             "name": "Meal Analysis",
-            "owners": ["TE"],
+            "owners": [
+              "TE"
+            ],
             "statusStages": [
               {
                 "stage": "in_progress",
-                "bullets": ["Received feedback on ingredients / estimates"]
+                "bullets": [
+                  "Evaluating new GPT models."
+                ]
+              },
+              {
+                "stage": "next",
+                "bullets": [
+                  "Still considering non GPT models for language improvements."
+                ]
               }
             ],
-            "targetDate": "TBD",
+            "targetDate": "Eval milestones",
             "links": [],
             "jiraIssues": []
           },
           {
             "id": "ask_jai",
             "name": "Ask Jai",
-            "owners": ["TE"],
+            "owners": [
+              "TE"
+            ],
             "statusStages": [
               {
-                "stage": "next",
-                "bullets": ["Improving prompts for summaries / prep"]
+                "stage": "in_progress",
+                "bullets": [
+                  "Evaluating new GPT models."
+                ]
               }
             ],
             "targetDate": "TBD",
@@ -67,140 +90,312 @@
           {
             "id": "notes_autofill",
             "name": "Notes Autofill",
-            "owners": ["SS"],
+            "owners": [
+              "SS"
+            ],
             "statusStages": [
               {
-                "stage": "done",
-                "bullets": ["Updated coaching notes prompts"]
+                "stage": "in_progress",
+                "bullets": [
+                  "Evaluating new GPT models"
+                ]
               }
             ],
-            "targetDate": "Feb 11",
+            "targetDate": "TBD",
             "links": [],
             "jiraIssues": []
           }
         ]
       },
       {
-        "id": "in_design_dev",
-        "label": "In Design / Development",
+        "id": "in_dev",
+        "label": "In Development",
         "theme": "blue",
         "rows": [
           {
-            "id": "validic_inform",
-            "name": "Validic Inform",
-            "statusLabel": "In Dev",
-            "owners": ["SY", "TE"],
-            "bullets": [],
-            "jiraIssues": [
-              {
-                "key": "NCW-87802",
-                "summary": "47 story points tracked in Jira",
-                "status": "In Progress",
-                "percentComplete": 94,
-                "etc": 3
-              }
+            "id": "roadmap_ncw_88017",
+            "name": "Tracker External Sync (1.0)",
+            "projectGroup": "Trackers",
+            "owners": [
+              "JG"
             ],
-            "targetDate": "Mar 11",
-            "links": []
-          },
-          {
-            "id": "new_tracker_model",
-            "name": "New Tracker Model",
-            "statusLabel": "In Dev",
-            "owners": ["XL", "JG", "TE"],
-            "bullets": [],
+            "bullets": [
+              "External sync configuration **almost done**; final testing completed; **minor adjustments** pending."
+            ],
             "jiraIssues": [
-              {
-                "key": "NCW-87854",
-                "percentComplete": 17,
-                "etc": 12,
-                "targetDate": "Mar 25"
-              },
-              {
-                "key": "NCW-87871",
-                "percentComplete": 44,
-                "etc": 6,
-                "targetDate": "Mar 27"
-              },
-              {
-                "key": "NCW-87890",
-                "percentComplete": 100,
-                "etc": null,
-                "targetDate": "Apr 15"
-              },
-              {
-                "key": "NCW-87940",
-                "percentComplete": 72,
-                "etc": 4,
-                "targetDate": "Apr 1"
-              },
               {
                 "key": "NCW-88017",
-                "percentComplete": 35,
-                "etc": 8,
-                "targetDate": "Apr 22"
+                "eaf": 25.5,
+                "todoCount": 5,
+                "inProgressCount": 2
               }
             ],
             "targetDate": "",
             "links": []
           },
           {
-            "id": "epic_ucsdh",
-            "name": "Epic @ UCSDH",
-            "statusLabel": "Live",
-            "owners": ["JG", "SG"],
-            "statusStages": [
-              {
-                "stage": "next",
-                "bullets": ["Next: data sync follow-ups"]
-              }
+            "id": "roadmap_ncw_88025",
+            "name": "Ketone and HRV tracker templates",
+            "projectGroup": "Trackers",
+            "owners": [
+              "JG"
+            ],
+            "bullets": [
+              "Ketone/HRV trackers available in demo.",
+              "Immediate next: begin **seeding global data** into global organisation."
             ],
             "jiraIssues": [
               {
-                "key": "SHC-134",
-                "percentComplete": 72,
-                "etc": null
+                "key": "NCW-88025",
+                "eaf": 21.55,
+                "todoCount": 1,
+                "inProgressCount": 1
               }
             ],
             "targetDate": "",
             "links": []
           },
+          {
+            "id": "roadmap_ncw_87941",
+            "name": "Tracker Template Usage: Targets (1.0)",
+            "projectGroup": "Trackers",
+            "owners": [],
+            "bullets": [
+              "Pushed major D3 update — target zones render on the graph.",
+              "Final validation underway."
+            ],
+            "jiraIssues": [
+              {
+                "key": "NCW-87941",
+                "eaf": 59.55,
+                "todoCount": 2,
+                "inProgressCount": 3
+              }
+            ],
+            "targetDate": "",
+            "links": []
+          },
+          {
+            "id": "roadmap_ncw_88080",
+            "name": "Keto-Mojo Integration (1.0)",
+            "projectGroup": "Device Integration",
+            "owners": [
+              "SY"
+            ],
+            "bullets": [
+              "Vendor fix for device expected late June.",
+              "Inform SDK integration up next."
+            ],
+            "jiraIssues": [
+              {
+                "key": "NCW-88080",
+                "eaf": 15.5,
+                "todoCount": 4,
+                "inProgressCount": 3,
+                "targetDate": "Late June"
+              }
+            ],
+            "targetDate": "",
+            "links": []
+          },
+          {
+            "id": "roadmap_ncw_87867",
+            "name": "GPT-5.4 for Jai (1.0)",
+            "projectGroup": "Integration",
+            "owners": [
+              "SY"
+            ],
+            "bullets": [
+              "Model routing work underway."
+            ],
+            "jiraIssues": [
+              {
+                "key": "NCW-87867",
+                "eaf": 32.95,
+                "todoCount": 6,
+                "inProgressCount": 2
+              }
+            ],
+            "targetDate": "",
+            "links": []
+          },
+          {
+            "id": "roadmap_ncw_87721",
+            "name": "Outcome Condition Questionnaire Authoring Tests (1.0)",
+            "projectGroup": "Other",
+            "owners": [
+              "AP"
+            ],
+            "bullets": [
+              "Questionnaire fix for 1 of 1 on multi-page in for next deployment."
+            ],
+            "jiraIssues": [
+              {
+                "key": "NCW-87721",
+                "eaf": 0,
+                "todoCount": 3,
+                "inProgressCount": 1
+              }
+            ],
+            "targetDate": "",
+            "links": []
+          },
+          {
+            "id": "roadmap_ncw_88123",
+            "name": "Upgrade TinyMCE to v6",
+            "projectGroup": "Other",
+            "owners": [
+              "SY"
+            ],
+            "bullets": [
+              "TinyMCE upgrade **working as intended** after Cursor pair programming; cleanup and **peer review** next.",
+              "Penetration-test **retest** targeted **mid-May** — tester schedule not yet confirmed."
+            ],
+            "jiraIssues": [
+              {
+                "key": "NCW-88123",
+                "eaf": 4.85
+              }
+            ],
+            "targetDate": "",
+            "links": []
+          },
+          {
+            "id": "roadmap_cwho_17226",
+            "name": "Configure domain authentication for custom sender email addresses",
+            "projectGroup": "Ops Platform Improvements",
+            "owners": [
+              "JL"
+            ],
+            "bullets": [
+              "SendGrid domain proof open; verified sender not complete.",
+              "Julien: continuous delivery failing tests — issue marked **work in progress** per Shahin (bandwidth)."
+            ],
+            "jiraIssues": [
+              {
+                "key": "CWHO-17226",
+                "eaf": 10.5,
+                "todoCount": 2,
+                "inProgressCount": 1
+              }
+            ],
+            "targetDate": "",
+            "links": []
+          },
+          {
+            "id": "roadmap_cwho_17730",
+            "name": "Ingress NGINX retirement (1.0)",
+            "projectGroup": "Ops Platform Improvements",
+            "owners": [
+              "JL"
+            ],
+            "bullets": [
+              "Production traffic on Hosted Ops ingress (DNS cut).",
+              "Hosted Ops ingress cleanup backlog remains."
+            ],
+            "jiraIssues": [
+              {
+                "key": "CWHO-17730",
+                "eaf": 23.7,
+                "todoCount": 3,
+                "inProgressCount": 2
+              }
+            ],
+            "targetDate": "",
+            "links": []
+          },
+          {
+            "id": "roadmap_cwho_17712",
+            "name": "Update npm dependencies (2.0)",
+            "projectGroup": "Ops Platform Improvements",
+            "owners": [],
+            "bullets": [
+              "Dependency upgrades requiring application code changes (scope per epic)."
+            ],
+            "jiraIssues": [
+              {
+                "key": "CWHO-17712",
+                "eaf": 0
+              }
+            ],
+            "targetDate": "",
+            "links": []
+          }
+        ]
+      },
+      {
+        "id": "in_design",
+        "label": "In Design",
+        "theme": "blue",
+        "rows": [
           {
             "id": "manage_nutrition_targets",
             "name": "Manage Nutrition Targets",
-            "statusLabel": "In Design",
-            "owners": ["TE", "SS"],
-            "bullets": [],
+            "owners": [
+              "TE",
+              "SS"
+            ],
+            "bullets": [
+              "Completed new dialog design for Target setting by percentage & Jai.",
+              "Next: prompt for target setting by percentage & Jai."
+            ],
             "jiraIssues": [],
             "targetDate": "",
-            "links": [
-              {
-                "label": "View Design",
-                "href": "https://example.com/designs/nutrition-targets"
-              }
-            ]
+            "links": []
           },
           {
             "id": "ui_improvements",
-            "name": "UI Improvements",
-            "statusLabel": "In Design",
-            "owners": ["TE"],
-            "bullets": [],
+            "name": "Workbook Improvements",
+            "owners": [
+              "TE"
+            ],
+            "bullets": [
+              "Expanding CSS allow list to modernize slide templates.",
+              "Building Cursor-based workflow to automate HTML generation and ultimately workbook seeding."
+            ],
             "jiraIssues": [],
             "targetDate": "",
-            "links": [
-              {
-                "label": "View Progress",
-                "href": "https://example.com/status/ui-improvements"
-              }
-            ]
+            "links": []
+          },
+          {
+            "id": "tracker_dashboard_filtering",
+            "name": "Tracker Dashboard Filtering",
+            "owners": [
+              "LS"
+            ],
+            "bullets": [
+              "New update group and epic for **tracker filtering** on the population **dashboard** and **reporting**.",
+              "**Cursor**-generated screens → **Figma** polish before wider share; **LangSmith** planned for prompt testing vs a newer model after dashboard work."
+            ],
+            "jiraIssues": [],
+            "targetDate": "",
+            "links": []
+          },
+          {
+            "id": "reporting_fields_phi",
+            "name": "Reporting fields (PHI / non-PHI)",
+            "owners": [
+              "TE"
+            ],
+            "bullets": [
+              "Non-PHI path for reportable fields — in design.",
+              "Adam to pick up after or in parallel with US-instance migration for PrehabRx."
+            ],
+            "jiraIssues": [],
+            "targetDate": "",
+            "links": []
           },
           {
             "id": "epic_uhn",
             "name": "Epic @ UHN",
-            "statusLabel": "In Progress",
-            "owners": ["SY", "SG"],
-            "bullets": ["UHN estimate: Large (55)"],
+            "owners": [
+              "SY",
+              "SG"
+            ],
+            "bullets": [
+              "UHN and NexJ aligned on a flowsheet-based Epic integration.",
+              "Discussions have moved beyond exploratory alignment into internal planning and effort estimation on the UHN side."
+            ],
             "jiraIssues": [],
             "targetDate": "",
             "links": []
@@ -214,109 +409,125 @@
     "sections": [
       {
         "id": "in_config_dev",
-        "label": "In Config / Development",
+        "label": "Pre Go Live",
         "theme": "blue",
         "rows": [
           {
-            "id": "ucsdh_wm",
-            "name": "UCSDH – WM",
-            "serviceTier": "Quick Start",
-            "owners": ["SS"],
-            "bullets": [
-              "Recruitment status (162 invited)",
-              "Dashboard updates in progress",
-              "Steering meeting scheduled for April 9"
+            "id": "twelve_weeks",
+            "name": "12 Weeks",
+            "serviceTier": "Custom",
+            "owners": [
+              "GY",
+              "TE"
             ],
-            "targetDate": "Live as of Jan 13",
-            "jiraIssues": [],
-            "links": [
-              {
-                "label": "View Dashboard",
-                "href": "https://example.com/dashboard/ucsdh-wm"
-              }
-            ]
-          },
-          {
-            "id": "abode_nac",
-            "name": "ABODE NAC",
-            "serviceTier": "Custom + Dev",
-            "owners": ["GY"],
             "bullets": [
-              "Configuration complete",
-              "Enrollment date TBD"
+              "Contract signed; Gideon coordinating kickoff (Sabina to be invited).",
+              "Deliverables scope still being clarified — block of days sold without a firm list; team to review Daniela’s handoff deck and send feedback to Tiffany.",
+              "Daniela: **handover recorded** for Sabina; Sabina to review ahead of **Microsoft 365 migration** coordination."
             ],
-            "targetDate": "TBD",
+            "targetDate": "",
             "jiraIssues": [],
             "links": []
           },
           {
-            "id": "baszucki_camh",
-            "name": "Baszucki / CAMH – Keto Program",
+            "id": "camh_baszucki",
+            "name": "CAMH & Baszucki",
             "serviceTier": "Custom + Dev",
-            "owners": ["TE", "JG"],
-            "bullets": [
-              "Program flow reviewed March 20 (see status deck)",
-              "Ongoing work for protocol design"
+            "owners": [
+              "SG"
             ],
-            "targetDate": "Go Live: April 2026",
+            "bullets": [
+              "Program flow reviewed with Bazucki team on Mar 20th.",
+              "Work ongoing for program protocol design and content; NCW feature development in progress.",
+              "Simranjit: costing weekly/monthly **meal delivery** and **produce boxes** — commit to share with group **next meeting**."
+            ],
+            "targetDate": "",
+            "availabilityNotes": "Go Live: June 2026",
             "jiraIssues": [],
-            "links": [
-              {
-                "label": "Status deck",
-                "href": "https://example.com/decks/camh-keto"
-              }
-            ]
+            "links": []
+          },
+          {
+            "id": "sow8_abode_nac",
+            "name": "SOW #8- ABODE NAC",
+            "serviceTier": "Custom",
+            "owners": [
+              "GY"
+            ],
+            "bullets": [
+              "Configuration complete, enrollment date TBD.",
+              "Stakeholder **workbook** review delayed (**Dr. Seal** team across radiation / medical oncology); Gideon sending **another reminder** and continuing follow-ups."
+            ],
+            "targetDate": "TBD",
+            "jiraIssues": [],
+            "links": []
           }
         ]
       },
       {
         "id": "live_active",
-        "label": "Live & Active Project",
+        "label": "Live & Active Projects",
         "theme": "green",
         "rows": [
           {
             "id": "prehabrx",
             "name": "PrehabRx",
-            "serviceTier": "Custom + Dev",
-            "owners": ["SG"],
+            "serviceTier": "Premium + Jai",
+            "owners": [
+              "GY"
+            ],
             "bullets": [
-              "New custom fields promoted to production March 31",
-              "Dashboard updated"
+              "New custom fields added to sandbox and promoted to production April 22.",
+              "Content **locked in production**; **US-instance migration** with **Adam** starting **next week** — on track for **May 21** completion ahead of **June** go-live.",
+              "Daniela: US-instance migration counted toward **renewal** — **not** charged to client support days; **dashboard + integration** only toward available days.",
+              "Add to Q2 roadmap: allow per-org config to disable auto-record for NCW Teams integration.",
+              "**Non-PII text and number fields** for PrehabRx targeted **Q2** — Adam after or parallel with migration."
             ],
             "targetDate": "",
-            "availabilityNotes": "Available Days: 3",
+            "availabilityNotes": "Renewal: 3/31/2027 · Available Days: 1.5",
             "jiraIssues": [],
             "links": []
           },
           {
             "id": "ucsd_coach",
-            "name": "UCSD COACH – BH, T2DM, HTN",
-            "serviceTier": "Premium with Jai",
-            "owners": ["SS", "TE"],
+            "name": "UCSD COACH",
+            "serviceTier": "Premium + Jai",
+            "owners": [
+              "SS",
+              "NW"
+            ],
             "bullets": [
-              "Epic integration live as of Feb 26 (see dev status)"
+              "Epic integration live in production as of Feb 26th.",
+              "Dashboard updated with new data source (questionnaire).",
+              "**Weight management** report ready; **GLP** page to be added by **end of month** and reviewed with Simranjit before send-out.",
+              "Participant counts: dashboard **38** vs platform **41** — new questionnaire version not yet in automation; **manual updates** until **Power Automate** catches up.",
+              "Daniela/Tiffany: pilot transitions toward standard practice after **four-month** mark; team to **consolidate coach and weight management streams** once pilot concludes."
             ],
             "targetDate": "",
-            "availabilityNotes": "Available Days: 3",
-            "jiraIssues": [],
-            "links": [
+            "availabilityNotes": "Renewal: 10/24/2026 · Available Days: 3",
+            "jiraIssues": [
               {
-                "label": "Dev status",
-                "href": "https://example.com/status/ucsd-coach"
+                "key": "SHC-134",
+                "todoCount": 2,
+                "inProgressCount": 1,
+                "percentComplete": 80,
+                "etc": 1.5
               }
-            ]
+            ],
+            "links": []
           },
           {
             "id": "uhn_shareclinic",
-            "name": "UHN – SHAREclinic SHC",
-            "serviceTier": "Custom + Dev",
-            "owners": ["SY", "SG"],
+            "name": "UHN – SHAReClinic +SHC",
+            "serviceTier": "Premium",
+            "owners": [
+              "GY"
+            ],
             "bullets": [
-              "Epic integration progressing",
-              "New workflow shared March 6"
+              "Epic integration progressing again.",
+              "SHC dashboard in design."
             ],
             "targetDate": "",
-            "availabilityNotes": "Available Days: 1",
+            "availabilityNotes": "Renewal: 9/7/2027 · Available Days: 5",
             "jiraIssues": [],
             "links": []
           }
@@ -324,60 +535,119 @@
       },
       {
         "id": "in_maintenance",
-        "label": "In Maintenance (with new updates)",
+        "label": "In Maintenance",
         "theme": "purple",
         "rows": [
           {
-            "id": "uhn_peer_nav",
-            "name": "UHN – Peer Navigation",
-            "serviceTier": "Quick Start",
-            "owners": ["SG"],
-            "bullets": [
-              "Privacy and security assessment in progress"
-            ],
-            "targetDate": "",
-            "availabilityNotes": "Available Days: 2",
-            "jiraIssues": [],
-            "links": []
-          },
-          {
-            "id": "gotodoctor",
-            "name": "GoToDoctor",
-            "serviceTier": "Custom + Dev",
-            "owners": ["GY"],
-            "bullets": [
-              "Ongoing support",
-              "UAT completed; new content promoted to production"
-            ],
-            "targetDate": "",
-            "availabilityNotes": "",
-            "jiraIssues": [],
-            "links": []
-          },
-          {
             "id": "zealcare",
             "name": "ZealCare",
-            "serviceTier": "Custom + Dev",
-            "owners": ["TE"],
+            "serviceTier": "Premium + Jai",
+            "owners": [
+              "SG"
+            ],
             "bullets": [
-              "Next check-in scheduled for April 30",
-              "Dashboard updated with utilization metrics"
+              "ZealCare Dashboard updated with new utilization metrics.",
+              "Proposal to use remaining support day for **badge-count filter** (session attendance / captain badges); Sabina/Gideon to confirm interest with ZealCare."
             ],
             "targetDate": "",
-            "availabilityNotes": "Available Days: 1.5",
+            "availabilityNotes": "Renewal: 10/15/2026 · Available Days: 1.5",
+            "jiraIssues": [],
+            "links": []
+          },
+          {
+            "id": "uhn_peer_nav",
+            "name": "UHN - PeerNav",
+            "serviceTier": "Premium",
+            "owners": [
+              "GY"
+            ],
+            "bullets": [
+              "Platform privacy and security assessment in progress.",
+              "UHN Teams integration in progress."
+            ],
+            "targetDate": "",
+            "availabilityNotes": "Renewal: 10/15/2026 · Available Days: 2",
             "jiraIssues": [],
             "links": []
           },
           {
             "id": "better_for_all",
-            "name": "Better For All",
-            "serviceTier": "Custom + Dev",
-            "owners": ["SS"],
+            "name": "BETTER For All",
+            "serviceTier": "Premium",
+            "owners": [
+              "GY"
+            ],
             "bullets": [
-              "Updating custom fields for the evaluation team"
+              "Custom fields and program flow updated.",
+              "New CHC site to be added into custom fields."
             ],
             "targetDate": "",
-            "availabilityNotes": "Available Days: 2",
+            "availabilityNotes": "Renewal: 9/30/2027 · Available Days: 4",
+            "jiraIssues": [],
+            "links": []
+          },
+          {
+            "id": "cdic",
+            "name": "CDIC",
+            "serviceTier": "Standard",
+            "owners": [
+              "GY"
+            ],
+            "bullets": [],
+            "targetDate": "",
+            "availabilityNotes": "Renewal: 4/19/2026",
+            "jiraIssues": [],
+            "links": []
+          },
+          {
+            "id": "wellness_institute",
+            "name": "The Wellness Institute",
+            "serviceTier": "Standard",
+            "owners": [
+              "GY"
+            ],
+            "bullets": [],
+            "targetDate": "",
+            "availabilityNotes": "Renewal: 5/14/2026",
+            "jiraIssues": [],
+            "links": []
+          },
+          {
+            "id": "call_check_jersey",
+            "name": "Call & Check - Jersey",
+            "serviceTier": "Standard",
+            "owners": [
+              "GY"
+            ],
+            "bullets": [],
+            "targetDate": "",
+            "availabilityNotes": "Renewal: 12/31/2026",
+            "jiraIssues": [],
+            "links": []
+          },
+          {
+            "id": "compsych",
+            "name": "ComPsych",
+            "serviceTier": "Basic",
+            "owners": [
+              "GY"
+            ],
+            "bullets": [],
+            "targetDate": "",
+            "availabilityNotes": "Renewal: 2/28/2027",
+            "jiraIssues": [],
+            "links": []
+          },
+          {
+            "id": "uhn_acceleration",
+            "name": "UHN - Acceleration",
+            "serviceTier": "Premium",
+            "owners": [
+              "GY"
+            ],
+            "bullets": [],
+            "targetDate": "",
+            "availabilityNotes": "Renewal: 3/31/2027",
             "jiraIssues": [],
             "links": []
           }

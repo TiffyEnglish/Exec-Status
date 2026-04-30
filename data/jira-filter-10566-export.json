@@ -1,0 +1,717 @@
+{
+  "issues": [
+    {
+      "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+      "id": "142048",
+      "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issue/142048",
+      "key": "CWHO-17226",
+      "fields": {
+        "summary": "Configure domain authentication for custom sender email addresses",
+        "issuetype": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issuetype/10000",
+          "id": "10000",
+          "description": "A big user story that needs to be broken down. Created by Jira Software - do not edit or delete.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/issuetypes/epic.svg",
+          "name": "Epic",
+          "subtask": false,
+          "hierarchyLevel": 1
+        },
+        "customfield_10180": 1.5,
+        "customfield_10181": null,
+        "customfield_10182": 1.5,
+        "project": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/project/10003",
+          "id": "10003",
+          "key": "CWHO",
+          "name": "Connected Wellness Hosted Ops",
+          "projectTypeKey": "software",
+          "simplified": false,
+          "avatarUrls": {
+            "48x48": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10402",
+            "24x24": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10402?size=small",
+            "16x16": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10402?size=xsmall",
+            "32x32": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10402?size=medium"
+          },
+          "projectCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/projectCategory/10000",
+            "id": "10000",
+            "description": "Project used by Health",
+            "name": "Health"
+          }
+        },
+        "assignee": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/user?accountId=557058%3A6ad1ebab-caea-4b7a-a37a-86f1eb11782b",
+          "accountId": "557058:6ad1ebab-caea-4b7a-a37a-86f1eb11782b",
+          "emailAddress": "julien.lamure@nexjhealth.com",
+          "avatarUrls": {
+            "48x48": "https://secure.gravatar.com/avatar/f0407409869b46d8a7e26d7496923010?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJL-2.png",
+            "24x24": "https://secure.gravatar.com/avatar/f0407409869b46d8a7e26d7496923010?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJL-2.png",
+            "16x16": "https://secure.gravatar.com/avatar/f0407409869b46d8a7e26d7496923010?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJL-2.png",
+            "32x32": "https://secure.gravatar.com/avatar/f0407409869b46d8a7e26d7496923010?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJL-2.png"
+          },
+          "displayName": "julien lamure",
+          "active": true,
+          "timeZone": "America/Toronto",
+          "accountType": "atlassian"
+        },
+        "customfield_10178": 10.5,
+        "status": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/status/3",
+          "description": "This work item is being actively worked on at the moment by the assignee.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/statuses/inprogress.png",
+          "name": "In Progress",
+          "id": "3",
+          "statusCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        },
+        "labels": []
+      }
+    },
+    {
+      "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+      "id": "145374",
+      "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issue/145374",
+      "key": "NCW-87239",
+      "fields": {
+        "summary": "Prompt Updates to Live Jai Features",
+        "issuetype": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issuetype/10000",
+          "id": "10000",
+          "description": "A big user story that needs to be broken down. Created by Jira Software - do not edit or delete.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/issuetypes/epic.svg",
+          "name": "Epic",
+          "subtask": false,
+          "hierarchyLevel": 1
+        },
+        "customfield_10180": 9.85,
+        "customfield_10181": null,
+        "customfield_10182": 9.85,
+        "project": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/project/10063",
+          "id": "10063",
+          "key": "NCW",
+          "name": "Connected Wellness",
+          "projectTypeKey": "software",
+          "simplified": false,
+          "avatarUrls": {
+            "48x48": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413",
+            "24x24": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=small",
+            "16x16": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=xsmall",
+            "32x32": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=medium"
+          },
+          "projectCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/projectCategory/10000",
+            "id": "10000",
+            "description": "Project used by Health",
+            "name": "Health"
+          }
+        },
+        "assignee": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/user?accountId=712020%3A65f3225f-0296-432e-b2cc-445616f3a15e",
+          "accountId": "712020:65f3225f-0296-432e-b2cc-445616f3a15e",
+          "emailAddress": "tiffany.english@nexjhealth.com",
+          "avatarUrls": {
+            "48x48": "https://secure.gravatar.com/avatar/d62434839d411a403404ae3ad710674b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTE-2.png",
+            "24x24": "https://secure.gravatar.com/avatar/d62434839d411a403404ae3ad710674b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTE-2.png",
+            "16x16": "https://secure.gravatar.com/avatar/d62434839d411a403404ae3ad710674b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTE-2.png",
+            "32x32": "https://secure.gravatar.com/avatar/d62434839d411a403404ae3ad710674b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTE-2.png"
+          },
+          "displayName": "Tiffany English",
+          "active": true,
+          "timeZone": "America/Toronto",
+          "accountType": "atlassian"
+        },
+        "customfield_10178": 12.2,
+        "status": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/status/3",
+          "description": "This work item is being actively worked on at the moment by the assignee.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/statuses/inprogress.png",
+          "name": "In Progress",
+          "id": "3",
+          "statusCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        },
+        "labels": []
+      }
+    },
+    {
+      "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+      "id": "146423",
+      "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issue/146423",
+      "key": "CWHO-17602",
+      "fields": {
+        "summary": "Cloud environment containerization: deployment and reliability improvements (9.0.2)",
+        "issuetype": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issuetype/10000",
+          "id": "10000",
+          "description": "A big user story that needs to be broken down. Created by Jira Software - do not edit or delete.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/issuetypes/epic.svg",
+          "name": "Epic",
+          "subtask": false,
+          "hierarchyLevel": 1
+        },
+        "customfield_10180": 32.4,
+        "customfield_10181": null,
+        "customfield_10182": 32.4,
+        "project": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/project/10003",
+          "id": "10003",
+          "key": "CWHO",
+          "name": "Connected Wellness Hosted Ops",
+          "projectTypeKey": "software",
+          "simplified": false,
+          "avatarUrls": {
+            "48x48": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10402",
+            "24x24": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10402?size=small",
+            "16x16": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10402?size=xsmall",
+            "32x32": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10402?size=medium"
+          },
+          "projectCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/projectCategory/10000",
+            "id": "10000",
+            "description": "Project used by Health",
+            "name": "Health"
+          }
+        },
+        "assignee": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/user?accountId=712020%3A3cae4380-66f0-40f9-8a3b-b1f0dfa026b1",
+          "accountId": "712020:3cae4380-66f0-40f9-8a3b-b1f0dfa026b1",
+          "emailAddress": "julien.barberi@nexjhealth.com",
+          "avatarUrls": {
+            "48x48": "https://secure.gravatar.com/avatar/4c4bcfee372b53794f57127468f46dfe?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJB-1.png",
+            "24x24": "https://secure.gravatar.com/avatar/4c4bcfee372b53794f57127468f46dfe?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJB-1.png",
+            "16x16": "https://secure.gravatar.com/avatar/4c4bcfee372b53794f57127468f46dfe?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJB-1.png",
+            "32x32": "https://secure.gravatar.com/avatar/4c4bcfee372b53794f57127468f46dfe?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJB-1.png"
+          },
+          "displayName": "Julien Barberi",
+          "active": true,
+          "timeZone": "America/Toronto",
+          "accountType": "atlassian"
+        },
+        "customfield_10178": 33.25,
+        "status": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/status/3",
+          "description": "This work item is being actively worked on at the moment by the assignee.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/statuses/inprogress.png",
+          "name": "In Progress",
+          "id": "3",
+          "statusCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        },
+        "labels": [
+          "Reliability",
+          "Scalability",
+          "Velocity"
+        ]
+      }
+    },
+    {
+      "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+      "id": "149013",
+      "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issue/149013",
+      "key": "NCW-87721",
+      "fields": {
+        "summary": "Outcome Condition Questionnaire Authoring Tests (1.0)",
+        "issuetype": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issuetype/10000",
+          "id": "10000",
+          "description": "A big user story that needs to be broken down. Created by Jira Software - do not edit or delete.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/issuetypes/epic.svg",
+          "name": "Epic",
+          "subtask": false,
+          "hierarchyLevel": 1
+        },
+        "customfield_10180": 0,
+        "customfield_10181": null,
+        "customfield_10182": 0,
+        "project": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/project/10063",
+          "id": "10063",
+          "key": "NCW",
+          "name": "Connected Wellness",
+          "projectTypeKey": "software",
+          "simplified": false,
+          "avatarUrls": {
+            "48x48": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413",
+            "24x24": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=small",
+            "16x16": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=xsmall",
+            "32x32": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=medium"
+          },
+          "projectCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/projectCategory/10000",
+            "id": "10000",
+            "description": "Project used by Health",
+            "name": "Health"
+          }
+        },
+        "assignee": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/user?accountId=712020%3Af8500c5b-007b-42ae-a9e1-ce87097846a8",
+          "accountId": "712020:f8500c5b-007b-42ae-a9e1-ce87097846a8",
+          "emailAddress": "adam.pettit@nexjhealth.com",
+          "avatarUrls": {
+            "48x48": "https://secure.gravatar.com/avatar/ea6db80a0026432ffe24610bef889779?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAP-4.png",
+            "24x24": "https://secure.gravatar.com/avatar/ea6db80a0026432ffe24610bef889779?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAP-4.png",
+            "16x16": "https://secure.gravatar.com/avatar/ea6db80a0026432ffe24610bef889779?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAP-4.png",
+            "32x32": "https://secure.gravatar.com/avatar/ea6db80a0026432ffe24610bef889779?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAP-4.png"
+          },
+          "displayName": "Adam Pettit",
+          "active": true,
+          "timeZone": "America/Toronto",
+          "accountType": "atlassian"
+        },
+        "customfield_10178": 0,
+        "status": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/status/3",
+          "description": "This work item is being actively worked on at the moment by the assignee.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/statuses/inprogress.png",
+          "name": "In Progress",
+          "id": "3",
+          "statusCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        },
+        "labels": []
+      }
+    },
+    {
+      "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+      "id": "149463",
+      "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issue/149463",
+      "key": "CWHO-17730",
+      "fields": {
+        "summary": "Ingress NGINX retirement (1.0)",
+        "issuetype": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issuetype/10000",
+          "id": "10000",
+          "description": "A big user story that needs to be broken down. Created by Jira Software - do not edit or delete.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/issuetypes/epic.svg",
+          "name": "Epic",
+          "subtask": false,
+          "hierarchyLevel": 1
+        },
+        "customfield_10180": 7.2,
+        "customfield_10181": null,
+        "customfield_10182": 7.2,
+        "project": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/project/10003",
+          "id": "10003",
+          "key": "CWHO",
+          "name": "Connected Wellness Hosted Ops",
+          "projectTypeKey": "software",
+          "simplified": false,
+          "avatarUrls": {
+            "48x48": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10402",
+            "24x24": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10402?size=small",
+            "16x16": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10402?size=xsmall",
+            "32x32": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10402?size=medium"
+          },
+          "projectCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/projectCategory/10000",
+            "id": "10000",
+            "description": "Project used by Health",
+            "name": "Health"
+          }
+        },
+        "assignee": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/user?accountId=557058%3A6ad1ebab-caea-4b7a-a37a-86f1eb11782b",
+          "accountId": "557058:6ad1ebab-caea-4b7a-a37a-86f1eb11782b",
+          "emailAddress": "julien.lamure@nexjhealth.com",
+          "avatarUrls": {
+            "48x48": "https://secure.gravatar.com/avatar/f0407409869b46d8a7e26d7496923010?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJL-2.png",
+            "24x24": "https://secure.gravatar.com/avatar/f0407409869b46d8a7e26d7496923010?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJL-2.png",
+            "16x16": "https://secure.gravatar.com/avatar/f0407409869b46d8a7e26d7496923010?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJL-2.png",
+            "32x32": "https://secure.gravatar.com/avatar/f0407409869b46d8a7e26d7496923010?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJL-2.png"
+          },
+          "displayName": "julien lamure",
+          "active": true,
+          "timeZone": "America/Toronto",
+          "accountType": "atlassian"
+        },
+        "customfield_10178": 23.7,
+        "status": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/status/3",
+          "description": "This work item is being actively worked on at the moment by the assignee.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/statuses/inprogress.png",
+          "name": "In Progress",
+          "id": "3",
+          "statusCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        },
+        "labels": [
+          "Security"
+        ]
+      }
+    },
+    {
+      "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+      "id": "151280",
+      "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issue/151280",
+      "key": "NCW-87867",
+      "fields": {
+        "summary": "GPT-5.4 for Jai (1.0)",
+        "issuetype": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issuetype/10000",
+          "id": "10000",
+          "description": "A big user story that needs to be broken down. Created by Jira Software - do not edit or delete.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/issuetypes/epic.svg",
+          "name": "Epic",
+          "subtask": false,
+          "hierarchyLevel": 1
+        },
+        "customfield_10180": 7.7,
+        "customfield_10181": null,
+        "customfield_10182": 7.7,
+        "project": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/project/10063",
+          "id": "10063",
+          "key": "NCW",
+          "name": "Connected Wellness",
+          "projectTypeKey": "software",
+          "simplified": false,
+          "avatarUrls": {
+            "48x48": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413",
+            "24x24": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=small",
+            "16x16": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=xsmall",
+            "32x32": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=medium"
+          },
+          "projectCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/projectCategory/10000",
+            "id": "10000",
+            "description": "Project used by Health",
+            "name": "Health"
+          }
+        },
+        "assignee": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/user?accountId=712020%3A744cbafa-743a-4641-9911-a93d5e337e65",
+          "accountId": "712020:744cbafa-743a-4641-9911-a93d5e337e65",
+          "emailAddress": "shahin.yousefi@nexjhealth.com",
+          "avatarUrls": {
+            "48x48": "https://secure.gravatar.com/avatar/22bd36cb3960f03075da79b0cc314cd4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSY-6.png",
+            "24x24": "https://secure.gravatar.com/avatar/22bd36cb3960f03075da79b0cc314cd4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSY-6.png",
+            "16x16": "https://secure.gravatar.com/avatar/22bd36cb3960f03075da79b0cc314cd4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSY-6.png",
+            "32x32": "https://secure.gravatar.com/avatar/22bd36cb3960f03075da79b0cc314cd4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSY-6.png"
+          },
+          "displayName": "Shahin Yousefi",
+          "active": true,
+          "timeZone": "America/Toronto",
+          "accountType": "atlassian"
+        },
+        "customfield_10178": 32.95,
+        "status": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/status/3",
+          "description": "This work item is being actively worked on at the moment by the assignee.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/statuses/inprogress.png",
+          "name": "In Progress",
+          "id": "3",
+          "statusCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        },
+        "labels": []
+      }
+    },
+    {
+      "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+      "id": "152008",
+      "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issue/152008",
+      "key": "NCW-87941",
+      "fields": {
+        "summary": "Tracker Template Usage: Targets (1.0)",
+        "issuetype": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issuetype/10000",
+          "id": "10000",
+          "description": "A big user story that needs to be broken down. Created by Jira Software - do not edit or delete.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/issuetypes/epic.svg",
+          "name": "Epic",
+          "subtask": false,
+          "hierarchyLevel": 1
+        },
+        "customfield_10180": 14.5,
+        "customfield_10181": null,
+        "customfield_10182": 14.5,
+        "project": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/project/10063",
+          "id": "10063",
+          "key": "NCW",
+          "name": "Connected Wellness",
+          "projectTypeKey": "software",
+          "simplified": false,
+          "avatarUrls": {
+            "48x48": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413",
+            "24x24": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=small",
+            "16x16": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=xsmall",
+            "32x32": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=medium"
+          },
+          "projectCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/projectCategory/10000",
+            "id": "10000",
+            "description": "Project used by Health",
+            "name": "Health"
+          }
+        },
+        "assignee": null,
+        "customfield_10178": 51.5,
+        "status": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/status/3",
+          "description": "This work item is being actively worked on at the moment by the assignee.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/statuses/inprogress.png",
+          "name": "In Progress",
+          "id": "3",
+          "statusCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        },
+        "labels": []
+      }
+    },
+    {
+      "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+      "id": "152535",
+      "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issue/152535",
+      "key": "NCW-88017",
+      "fields": {
+        "summary": "Tracker External Sync (1.0)",
+        "issuetype": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issuetype/10000",
+          "id": "10000",
+          "description": "A big user story that needs to be broken down. Created by Jira Software - do not edit or delete.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/issuetypes/epic.svg",
+          "name": "Epic",
+          "subtask": false,
+          "hierarchyLevel": 1
+        },
+        "customfield_10180": 0,
+        "customfield_10181": null,
+        "customfield_10182": 0,
+        "project": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/project/10063",
+          "id": "10063",
+          "key": "NCW",
+          "name": "Connected Wellness",
+          "projectTypeKey": "software",
+          "simplified": false,
+          "avatarUrls": {
+            "48x48": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413",
+            "24x24": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=small",
+            "16x16": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=xsmall",
+            "32x32": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=medium"
+          },
+          "projectCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/projectCategory/10000",
+            "id": "10000",
+            "description": "Project used by Health",
+            "name": "Health"
+          }
+        },
+        "assignee": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/user?accountId=712020%3A68a7b68e-e3c7-4b41-b61f-41a980fb770b",
+          "accountId": "712020:68a7b68e-e3c7-4b41-b61f-41a980fb770b",
+          "emailAddress": "joshua.greenslade@nexjhealth.com",
+          "avatarUrls": {
+            "48x48": "https://secure.gravatar.com/avatar/b8e4c6613782456ec5dbd19317560a9c?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJG-6.png",
+            "24x24": "https://secure.gravatar.com/avatar/b8e4c6613782456ec5dbd19317560a9c?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJG-6.png",
+            "16x16": "https://secure.gravatar.com/avatar/b8e4c6613782456ec5dbd19317560a9c?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJG-6.png",
+            "32x32": "https://secure.gravatar.com/avatar/b8e4c6613782456ec5dbd19317560a9c?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJG-6.png"
+          },
+          "displayName": "Joshua Greenslade",
+          "active": true,
+          "timeZone": "America/Toronto",
+          "accountType": "atlassian"
+        },
+        "customfield_10178": 25.5,
+        "status": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/status/3",
+          "description": "This work item is being actively worked on at the moment by the assignee.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/statuses/inprogress.png",
+          "name": "In Progress",
+          "id": "3",
+          "statusCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        },
+        "labels": []
+      }
+    },
+    {
+      "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+      "id": "152551",
+      "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issue/152551",
+      "key": "NCW-88025",
+      "fields": {
+        "summary": "Ketone and HRV tracker templates",
+        "issuetype": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issuetype/10000",
+          "id": "10000",
+          "description": "A big user story that needs to be broken down. Created by Jira Software - do not edit or delete.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/issuetypes/epic.svg",
+          "name": "Epic",
+          "subtask": false,
+          "hierarchyLevel": 1
+        },
+        "customfield_10180": 12.7,
+        "customfield_10181": null,
+        "customfield_10182": 12.7,
+        "project": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/project/10063",
+          "id": "10063",
+          "key": "NCW",
+          "name": "Connected Wellness",
+          "projectTypeKey": "software",
+          "simplified": false,
+          "avatarUrls": {
+            "48x48": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413",
+            "24x24": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=small",
+            "16x16": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=xsmall",
+            "32x32": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=medium"
+          },
+          "projectCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/projectCategory/10000",
+            "id": "10000",
+            "description": "Project used by Health",
+            "name": "Health"
+          }
+        },
+        "assignee": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/user?accountId=712020%3A68a7b68e-e3c7-4b41-b61f-41a980fb770b",
+          "accountId": "712020:68a7b68e-e3c7-4b41-b61f-41a980fb770b",
+          "emailAddress": "joshua.greenslade@nexjhealth.com",
+          "avatarUrls": {
+            "48x48": "https://secure.gravatar.com/avatar/b8e4c6613782456ec5dbd19317560a9c?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJG-6.png",
+            "24x24": "https://secure.gravatar.com/avatar/b8e4c6613782456ec5dbd19317560a9c?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJG-6.png",
+            "16x16": "https://secure.gravatar.com/avatar/b8e4c6613782456ec5dbd19317560a9c?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJG-6.png",
+            "32x32": "https://secure.gravatar.com/avatar/b8e4c6613782456ec5dbd19317560a9c?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJG-6.png"
+          },
+          "displayName": "Joshua Greenslade",
+          "active": true,
+          "timeZone": "America/Toronto",
+          "accountType": "atlassian"
+        },
+        "customfield_10178": 19.2,
+        "status": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/status/3",
+          "description": "This work item is being actively worked on at the moment by the assignee.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/statuses/inprogress.png",
+          "name": "In Progress",
+          "id": "3",
+          "statusCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        },
+        "labels": []
+      }
+    },
+    {
+      "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+      "id": "153149",
+      "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issue/153149",
+      "key": "NCW-88080",
+      "fields": {
+        "summary": "Keto-Mojo Integration (1.0)",
+        "issuetype": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/issuetype/10000",
+          "id": "10000",
+          "description": "A big user story that needs to be broken down. Created by Jira Software - do not edit or delete.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/issuetypes/epic.svg",
+          "name": "Epic",
+          "subtask": false,
+          "hierarchyLevel": 1
+        },
+        "customfield_10180": 11,
+        "customfield_10181": null,
+        "customfield_10182": 11,
+        "project": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/project/10063",
+          "id": "10063",
+          "key": "NCW",
+          "name": "Connected Wellness",
+          "projectTypeKey": "software",
+          "simplified": false,
+          "avatarUrls": {
+            "48x48": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413",
+            "24x24": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=small",
+            "16x16": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=xsmall",
+            "32x32": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/universal_avatar/view/type/project/avatar/10413?size=medium"
+          },
+          "projectCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/projectCategory/10000",
+            "id": "10000",
+            "description": "Project used by Health",
+            "name": "Health"
+          }
+        },
+        "assignee": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/user?accountId=712020%3A744cbafa-743a-4641-9911-a93d5e337e65",
+          "accountId": "712020:744cbafa-743a-4641-9911-a93d5e337e65",
+          "emailAddress": "shahin.yousefi@nexjhealth.com",
+          "avatarUrls": {
+            "48x48": "https://secure.gravatar.com/avatar/22bd36cb3960f03075da79b0cc314cd4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSY-6.png",
+            "24x24": "https://secure.gravatar.com/avatar/22bd36cb3960f03075da79b0cc314cd4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSY-6.png",
+            "16x16": "https://secure.gravatar.com/avatar/22bd36cb3960f03075da79b0cc314cd4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSY-6.png",
+            "32x32": "https://secure.gravatar.com/avatar/22bd36cb3960f03075da79b0cc314cd4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSY-6.png"
+          },
+          "displayName": "Shahin Yousefi",
+          "active": true,
+          "timeZone": "America/Toronto",
+          "accountType": "atlassian"
+        },
+        "customfield_10178": 15.5,
+        "status": {
+          "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/status/3",
+          "description": "This work item is being actively worked on at the moment by the assignee.",
+          "iconUrl": "https://nexjhealth.atlassian.net/images/icons/statuses/inprogress.png",
+          "name": "In Progress",
+          "id": "3",
+          "statusCategory": {
+            "self": "https://api.atlassian.com/ex/jira/f7980676-81c8-44b6-a29f-5af8720beb27/rest/api/3/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        },
+        "labels": []
+      }
+    }
+  ],
+  "isLast": true
+}

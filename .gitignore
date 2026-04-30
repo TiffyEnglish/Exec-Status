@@ -8,3 +8,6 @@
 .env
 .env.local
 node_modules/
+
+# Local EAF map produced from MCP reads (optional scratch file)
+/data/jira-eaf-patch.json

@@ -15,7 +15,7 @@
         "generatedAt": {
           "type": "string",
           "format": "date-time",
-          "description": "ISO 8601 timestamp when this JSON was last produced."
+          "description": "ISO 8601 when this JSON was produced. Prefer leading YYYY-MM-DD (optional time); renderer uses that date prefix as the report calendar day for Last Updated and workload Target math."
         },
         "source": {
           "type": "string",
@@ -66,7 +66,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "Stable id, e.g. live_ai, in_design_dev."
+          "description": "Stable id: e.g. live_ai_features, in_dev, in_design (product); client section ids as needed."
         },
         "label": {
           "type": "string",
@@ -90,9 +90,13 @@
       "properties": {
         "id": { "type": "string", "description": "Stable key for merge, e.g. validic_inform." },
         "name": { "type": "string", "description": "Feature or client / project name shown in column 1." },
+        "projectGroup": {
+          "type": ["string", "null"],
+          "description": "In Development: groups consecutive rows via rowspan (e.g. Trackers)."
+        },
         "serviceTier": {
           "type": ["string", "null"],
-          "description": "Client report: Quick Start, Custom + Dev, Premium with Jai, etc."
+          "description": "Client report Service column: MUST mirror PROJ Page Properties—Pre Go Live uses Service Type only; Live & Active and In Maintenance use Org Subscription Type only (PLAYBOOK §4)."
         },
         "statusLabel": {
           "type": ["string", "null"],
@@ -105,7 +109,7 @@
         },
         "statusStages": {
           "type": "array",
-          "description": "Product Work column only — groups bullets into completed vs in-progress vs not-started/next. Separate from Status (statusLabel/chip).",
+          "description": "Product Status updates column only — groups bullets into completed vs in-progress vs not-started/next. Separate from Status (statusLabel/chip).",
           "items": {
             "type": "object",
             "required": ["stage", "bullets"],
@@ -122,7 +126,7 @@
         "bullets": {
           "type": "array",
           "items": { "type": "string" },
-          "description": "Primary narrative bullets when not using statusStages."
+          "description": "Primary bullets for the Status updates column when not using statusStages."
         },
         "jiraIssues": {
           "type": "array",
@@ -155,14 +159,33 @@
         "key": { "type": "string", "pattern": "^[A-Z][A-Z0-9]+-\\d+$" },
         "summary": { "type": ["string", "null"] },
         "status": { "type": ["string", "null"] },
-        "percentComplete": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "percentComplete": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Fallback when HTML render cannot derive % from EAF & ETC; otherwise superseded by (EAF − ETC) / EAF."
+        },
         "etc": {
-          "type": ["integer", "null"],
-          "description": "Escaped time / remaining story points placeholder—map from Jira as needed."
+          "type": ["integer", "number", "null"],
+          "description": "Fallback ETC when todoCount/inProgressCount are absent; otherwise ETC = To Do × 1.5 + In Progress × 1 at render time."
+        },
+        "eaf": {
+          "type": ["integer", "number", "null"],
+          "description": "Jira Project EAF (Cached) stored as eaf — populate via Atlassian MCP + npm run jira:eaf -- --patch (preferred), or npm run jira:eaf REST fallback (field name Project EAF (Cached) unless JIRA_EAF_FIELD_ID is set). In Development EAF column."
         },
         "targetDate": {
           "type": ["string", "null"],
-          "description": "Per-ticket target or due date; surfaced in the product Target column (not in the Jira column)."
+          "description": "Per-ticket Target label when set — takes precedence over workload-based Wednesdays when non-empty."
+        },
+        "todoCount": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Optional: number of To Do sub-tasks / items for workload target (with inProgressCount drives weekly Wednesday Target)."
+        },
+        "inProgressCount": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Optional: number of In Progress items paired with todoCount for computed Target date."
         }
       }
     },

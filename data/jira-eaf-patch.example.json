@@ -1,0 +1,5 @@
+{
+  "_readme": "Copy to jira-eaf-patch.json (gitignored). Fill keys from Atlassian MCP getJiraIssue fields — see PLAYBOOK.md and JIRA_EAF_FIELD_ID in .env.example.",
+  "NCW-88017": 25.5,
+  "CWHO-17226": 10.5
+}

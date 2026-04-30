@@ -5,7 +5,7 @@
 3. **Merge JSON** — Duplicate `data/example-merged.json` → `data/merged-YYYY-MM-DD.json`; update structured rows (`productReport` then `clientReport`). Keep `"meta.generatedAt"` current ISO stamp.
 4. **Render proof** —
    ```bash
-   $env:JIRA_BASE_URL="https://<site>.atlassian.net/browse/"
+   $env:JIRA_BASE_URL="https://nexjhealth.atlassian.net/browse/"
    npm run render -- data/merged-YYYY-MM-DD.json
    ```
 5. **Visual QA** — Open `dist/status.html` locally; zoom to 125% exec-style; fix HTML/CSS templates if banners misalign (`styles/report.css`).
