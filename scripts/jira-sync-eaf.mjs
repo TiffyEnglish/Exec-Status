@@ -1,20 +1,20 @@
 #!/usr/bin/env node
-/**
- * Writes **`jiraIssues[].eaf`** (Project EAF (Cached)) into merged JSON.
+/
+ * Writes `jiraIssues[].eaf` (Project EAF (Cached)) into merged JSON.
  *
- * **Preferred (Cursor):** use **Atlassian MCP** (`getJiraIssue` or `searchJiraIssuesUsingJql`) with your site’s
- * EAF custom field id (see `.env.example` → **`JIRA_EAF_FIELD_ID`**), build a JSON map **`{ "NCW-88017": 25.5, … }`**,
- * then apply **without** API tokens:
+ * Preferred (Cursor): use Atlassian MCP (`getJiraIssue` or `searchJiraIssuesUsingJql`) with your site’s
+ * EAF custom field id (see `.env.example` → `JIRA_EAF_FIELD_ID`), build a JSON map `{ "NCW-88017": 25.5, … }`,
+ * then apply without API tokens:
  *
  *   npm run jira:eaf -- --patch data/jira-eaf-patch.json
  *
- * Keys may be ignored when prefixed with **`_`** (e.g. **`"_note"`**) for scratch metadata.
+ * Keys may be ignored when prefixed with `_` (e.g. `"_note"`) for scratch metadata.
  *
- * **CLI fallback:** when **`JIRA_EMAIL`** + **`JIRA_TOKEN`** are set, this script can fetch via Jira REST
- * (`GET /rest/api/3/field` resolves **Project EAF (Cached)** unless **`JIRA_EAF_FIELD_ID`** is set).
+ * CLI fallback: when `JIRA_EMAIL` + `JIRA_TOKEN` are set, this script can fetch via Jira REST
+ * (`GET /rest/api/3/field` resolves Project EAF (Cached) unless `JIRA_EAF_FIELD_ID` is set).
  *
- * ETC and % Cmp. (% Complete) are **computed at HTML render time** (`scripts/render.mjs`) from:
- *   workload ETC = (# To Do × 1.5) + (# In Progress × 1)
+ * ETC and % Cmp. (% Complete) are computed at HTML render time (`scripts/render.mjs`) from:
+ *   workload ETC = (# To Do × 1.5) + (# In Progress × 1) + (# Code Review × 0.5) + (# QA Review × 0.25)
  *   % = (EAF − ETC) / EAF  (when EAF &gt; 0)
  *
  * REST requires:
@@ -22,7 +22,7 @@
  *   JIRA_TOKEN (or ATLASSIAN_API_TOKEN)
  * Optional:
  *   JIRA_HOST (default nexjhealth.atlassian.net)
- *   JIRA_EAF_FIELD_ID — optional for REST; document the same id for MCP **`fields`** arrays
+ *   JIRA_EAF_FIELD_ID — optional for REST; document the same id for MCP `fields` arrays
  *   JIRA_MERGED_JSON — path relative to repo root (default data/example-merged.json)
  *
  * Usage:
@@ -38,7 +38,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 
-/** Load `.env.local` from repo root (KEY=value, # comments); does not override existing env vars. */
+/ Load `.env.local` from repo root (KEY=value, # comments); does not override existing env vars. */
 function loadEnvLocalOptional() {
   const fp = path.join(ROOT, '.env.local');
   if (!fs.existsSync(fp)) return;
@@ -74,14 +74,14 @@ function parseArgs(argv) {
   return out;
 }
 
-/** @returns {Promise<string>} */
+/ @returns {Promise<string>} */
 async function readStdinUtf8() {
   const chunks = [];
   for await (const c of process.stdin) chunks.push(c);
   return Buffer.concat(chunks).toString('utf8');
 }
 
-/**
+/
  * Parse `{ "NCW-1": 12.5, "_note": "..." }` → map of issue key → finite number.
  * Ignores keys starting with `_`.
  */
@@ -90,7 +90,7 @@ function parsePatchJson(raw) {
   if (!o || typeof o !== 'object' || Array.isArray(o)) {
     throw new Error('Patch JSON must be a flat object of issue keys to numbers.');
   }
-  /** @type {Record<string, number>} */
+  / @type {Record<string, number>} */
   const keyToEaf = {};
   for (const [k, v] of Object.entries(o)) {
     if (k.startsWith('_')) continue;
@@ -165,8 +165,8 @@ function normalizeFieldName(s) {
     .replace(/\s+/g, ' ');
 }
 
-/**
- * Finds the custom field named **Project EAF (Cached)** (epics/features).
+/
+ * Finds the custom field named Project EAF (Cached) (epics/features).
  * Optional `JIRA_EAF_FIELD_ID` skips lookup (value still stored as `eaf` in merged JSON).
  */
 async function resolveEafFieldId(host, email, token, verbose) {
@@ -273,7 +273,7 @@ async function main() {
     console.error(`
 Missing JIRA_EMAIL / JIRA_TOKEN (REST path).
 
-Preferred in Cursor: read **Project EAF (Cached)** with **Atlassian MCP** (\`getJiraIssue\` / \`searchJiraIssuesUsingJql\`),
+Preferred in Cursor: read Project EAF (Cached) with Atlassian MCP (\`getJiraIssue\` / \`searchJiraIssuesUsingJql\`),
 build a JSON map \`{ "NCW-88017": 25.5, … }\`, then apply locally:
 
   npm run jira:eaf -- --patch data/jira-eaf-patch.json

@@ -51,7 +51,7 @@ WORKLOAD_FALLBACK_BY_KEY = {
 GROUP_RENDER_ORDER = [
     "Trackers",
     "Device Integration",
-    "Ops Platform Improvements",
+    "Ops",
     "Other",
 ]
 
@@ -83,7 +83,7 @@ def reorder_issues_by_group_then_rank(
 
 def project_group_for_key(key: str) -> str:
     if key.startswith("CWHO"):
-        return "Ops Platform Improvements"
+        return "Ops"
     if key.startswith("SHC"):
         return "Device Integration"
     if key in NCW_GROUP:

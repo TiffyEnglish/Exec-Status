@@ -167,7 +167,7 @@
         },
         "etc": {
           "type": ["integer", "number", "null"],
-          "description": "Fallback ETC when todoCount/inProgressCount are absent; otherwise ETC = To Do × 1.5 + In Progress × 1 at render time."
+          "description": "Fallback ETC when workload counts are absent; otherwise ETC = To Do × 1.5 + In Progress × 1 + Code Review × 0.5 + QA Review × 0.25 at render time (Closed does not add to ETC)."
         },
         "eaf": {
           "type": ["integer", "number", "null"],
@@ -180,12 +180,27 @@
         "todoCount": {
           "type": ["integer", "null"],
           "minimum": 0,
-          "description": "Optional: number of To Do sub-tasks / items for workload target (with inProgressCount drives weekly Wednesday Target)."
+          "description": "Optional: child issues in Jira To Do status category (see PLAYBOOK §3 Workload)."
         },
         "inProgressCount": {
           "type": ["integer", "null"],
           "minimum": 0,
-          "description": "Optional: number of In Progress items paired with todoCount for computed Target date."
+          "description": "Optional: In Progress category children excluding Code Review and QA Review status names (used with other workload counts for ETC and Target)."
+        },
+        "codeReviewCount": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Optional: child issues whose status name contains \"Code Review\" (e.g. Code Review 2, Code Review Passed)."
+        },
+        "qaReviewCount": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Optional: child issues in QA Review status."
+        },
+        "closedCount": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Optional: child issues in Done / Closed category (reporting only; does not add to ETC)."
         }
       }
     },

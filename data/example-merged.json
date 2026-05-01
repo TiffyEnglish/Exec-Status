@@ -2,7 +2,7 @@
   "meta": {
     "generatedAt": "2026-04-30T20:00:00",
     "source": "cursor-session",
-    "jiraQuerySummary": "In Development synced to filter **10566** — EAF from Jira MCP (`customfield_10178`) 2026-04-30.",
+    "jiraQuerySummary": "In Development synced to filter 10566 — EAF from Jira MCP (`customfield_10178`) 2026-04-30.",
     "transcriptPaths": [
       "data/transcripts/2026-04-30__project-standup.txt",
       "data/transcripts/2026-04-30__ai-team-touchpoint.txt"
@@ -120,14 +120,17 @@
               "JG"
             ],
             "bullets": [
-              "External sync configuration **almost done**; final testing completed; **minor adjustments** pending."
+              "External sync configuration almost done; final testing completed; minor adjustments pending."
             ],
             "jiraIssues": [
               {
                 "key": "NCW-88017",
                 "eaf": 25.5,
-                "todoCount": 5,
-                "inProgressCount": 2
+                "todoCount": 0,
+                "inProgressCount": 0,
+                "codeReviewCount": 0,
+                "qaReviewCount": 0,
+                "closedCount": 22
               }
             ],
             "targetDate": "",
@@ -142,14 +145,17 @@
             ],
             "bullets": [
               "Ketone/HRV trackers available in demo.",
-              "Immediate next: begin **seeding global data** into global organisation."
+              "Immediate next: begin seeding global data into global organisation."
             ],
             "jiraIssues": [
               {
                 "key": "NCW-88025",
                 "eaf": 21.55,
-                "todoCount": 1,
-                "inProgressCount": 1
+                "todoCount": 3,
+                "inProgressCount": 1,
+                "codeReviewCount": 3,
+                "qaReviewCount": 5,
+                "closedCount": 5
               }
             ],
             "targetDate": "",
@@ -168,8 +174,11 @@
               {
                 "key": "NCW-87941",
                 "eaf": 59.55,
-                "todoCount": 2,
-                "inProgressCount": 3
+                "todoCount": 4,
+                "inProgressCount": 3,
+                "codeReviewCount": 0,
+                "qaReviewCount": 10,
+                "closedCount": 29
               }
             ],
             "targetDate": "",
@@ -190,8 +199,11 @@
               {
                 "key": "NCW-88080",
                 "eaf": 15.5,
-                "todoCount": 4,
-                "inProgressCount": 3,
+                "todoCount": 2,
+                "inProgressCount": 0,
+                "codeReviewCount": 0,
+                "qaReviewCount": 7,
+                "closedCount": 3,
                 "targetDate": "Late June"
               }
             ],
@@ -212,8 +224,11 @@
               {
                 "key": "NCW-87867",
                 "eaf": 32.95,
-                "todoCount": 6,
-                "inProgressCount": 2
+                "todoCount": 5,
+                "inProgressCount": 1,
+                "codeReviewCount": 0,
+                "qaReviewCount": 1,
+                "closedCount": 22
               }
             ],
             "targetDate": "",
@@ -233,8 +248,11 @@
               {
                 "key": "NCW-87721",
                 "eaf": 0,
-                "todoCount": 3,
-                "inProgressCount": 1
+                "todoCount": 0,
+                "inProgressCount": 0,
+                "codeReviewCount": 1,
+                "qaReviewCount": 0,
+                "closedCount": 0
               }
             ],
             "targetDate": "",
@@ -248,13 +266,18 @@
               "SY"
             ],
             "bullets": [
-              "TinyMCE upgrade **working as intended** after Cursor pair programming; cleanup and **peer review** next.",
-              "Penetration-test **retest** targeted **mid-May** — tester schedule not yet confirmed."
+              "TinyMCE upgrade working as intended after Cursor pair programming; cleanup and peer review next.",
+              "Penetration-test retest targeted mid-May — tester schedule not yet confirmed."
             ],
             "jiraIssues": [
               {
                 "key": "NCW-88123",
-                "eaf": 4.85
+                "eaf": 4.85,
+                "todoCount": 0,
+                "inProgressCount": 2,
+                "codeReviewCount": 0,
+                "qaReviewCount": 2,
+                "closedCount": 0
               }
             ],
             "targetDate": "",
@@ -263,20 +286,23 @@
           {
             "id": "roadmap_cwho_17226",
             "name": "Configure domain authentication for custom sender email addresses",
-            "projectGroup": "Ops Platform Improvements",
+            "projectGroup": "Ops",
             "owners": [
               "JL"
             ],
             "bullets": [
               "SendGrid domain proof open; verified sender not complete.",
-              "Julien: continuous delivery failing tests — issue marked **work in progress** per Shahin (bandwidth)."
+              "Julien: continuous delivery failing tests — issue marked work in progress per Shahin (bandwidth)."
             ],
             "jiraIssues": [
               {
                 "key": "CWHO-17226",
                 "eaf": 10.5,
-                "todoCount": 2,
-                "inProgressCount": 1
+                "todoCount": 0,
+                "inProgressCount": 1,
+                "codeReviewCount": 0,
+                "qaReviewCount": 0,
+                "closedCount": 7
               }
             ],
             "targetDate": "",
@@ -285,7 +311,7 @@
           {
             "id": "roadmap_cwho_17730",
             "name": "Ingress NGINX retirement (1.0)",
-            "projectGroup": "Ops Platform Improvements",
+            "projectGroup": "Ops",
             "owners": [
               "JL"
             ],
@@ -297,8 +323,11 @@
               {
                 "key": "CWHO-17730",
                 "eaf": 23.7,
-                "todoCount": 3,
-                "inProgressCount": 2
+                "todoCount": 0,
+                "inProgressCount": 0,
+                "codeReviewCount": 1,
+                "qaReviewCount": 3,
+                "closedCount": 14
               }
             ],
             "targetDate": "",
@@ -307,7 +336,7 @@
           {
             "id": "roadmap_cwho_17712",
             "name": "Update npm dependencies (2.0)",
-            "projectGroup": "Ops Platform Improvements",
+            "projectGroup": "Ops",
             "owners": [],
             "bullets": [
               "Dependency upgrades requiring application code changes (scope per epic)."
@@ -315,7 +344,12 @@
             "jiraIssues": [
               {
                 "key": "CWHO-17712",
-                "eaf": 0
+                "eaf": 0,
+                "todoCount": 23,
+                "inProgressCount": 0,
+                "codeReviewCount": 0,
+                "qaReviewCount": 0,
+                "closedCount": 6
               }
             ],
             "targetDate": "",
@@ -326,7 +360,7 @@
       {
         "id": "in_design",
         "label": "In Design",
-        "theme": "blue",
+        "theme": "purple",
         "rows": [
           {
             "id": "manage_nutrition_targets",
@@ -364,8 +398,8 @@
               "LS"
             ],
             "bullets": [
-              "New update group and epic for **tracker filtering** on the population **dashboard** and **reporting**.",
-              "**Cursor**-generated screens → **Figma** polish before wider share; **LangSmith** planned for prompt testing vs a newer model after dashboard work."
+              "New update group and epic for tracker filtering on the population dashboard and reporting.",
+              "Cursor-generated screens → Figma polish before wider share; LangSmith planned for prompt testing vs a newer model after dashboard work."
             ],
             "jiraIssues": [],
             "targetDate": "",
@@ -421,9 +455,8 @@
               "TE"
             ],
             "bullets": [
-              "Contract signed; Gideon coordinating kickoff (Sabina to be invited).",
-              "Deliverables scope still being clarified — block of days sold without a firm list; team to review Daniela’s handoff deck and send feedback to Tiffany.",
-              "Daniela: **handover recorded** for Sabina; Sabina to review ahead of **Microsoft 365 migration** coordination."
+              "Contract signed; Gideon coordinating kickoff.",
+              "Daniela provided handover to Gideon and Tiffany, recording shared with Sabina."
             ],
             "targetDate": "",
             "jiraIssues": [],
@@ -438,8 +471,9 @@
             ],
             "bullets": [
               "Program flow reviewed with Bazucki team on Mar 20th.",
-              "Work ongoing for program protocol design and content; NCW feature development in progress.",
-              "Simranjit: costing weekly/monthly **meal delivery** and **produce boxes** — commit to share with group **next meeting**."
+              "Work ongoing for program protocol design and content.",
+              "Keto-Mojo integration delayed until June.",
+              "Sim costing weekly/monthly meal delivery and produce boxes to adress population concern from CAMH."
             ],
             "targetDate": "",
             "availabilityNotes": "Go Live: June 2026",
@@ -455,7 +489,7 @@
             ],
             "bullets": [
               "Configuration complete, enrollment date TBD.",
-              "Stakeholder **workbook** review delayed (**Dr. Seal** team across radiation / medical oncology); Gideon sending **another reminder** and continuing follow-ups."
+              "Gideon sending another reminder and continuing follow-ups."
             ],
             "targetDate": "TBD",
             "jiraIssues": [],
@@ -477,10 +511,9 @@
             ],
             "bullets": [
               "New custom fields added to sandbox and promoted to production April 22.",
-              "Content **locked in production**; **US-instance migration** with **Adam** starting **next week** — on track for **May 21** completion ahead of **June** go-live.",
-              "Daniela: US-instance migration counted toward **renewal** — **not** charged to client support days; **dashboard + integration** only toward available days.",
-              "Add to Q2 roadmap: allow per-org config to disable auto-record for NCW Teams integration.",
-              "**Non-PII text and number fields** for PrehabRx targeted **Q2** — Adam after or parallel with migration."
+              "US-instance migration starting next week — on track for May 21.",
+              "Add to roadmap to allow per-org config to disable auto-record for NCW Teams integration.",
+              "Non-PII text and number fields for PrehabRx targeted Q2."
             ],
             "targetDate": "",
             "availabilityNotes": "Renewal: 3/31/2027 · Available Days: 1.5",
@@ -496,11 +529,8 @@
               "NW"
             ],
             "bullets": [
-              "Epic integration live in production as of Feb 26th.",
-              "Dashboard updated with new data source (questionnaire).",
-              "**Weight management** report ready; **GLP** page to be added by **end of month** and reviewed with Simranjit before send-out.",
-              "Participant counts: dashboard **38** vs platform **41** — new questionnaire version not yet in automation; **manual updates** until **Power Automate** catches up.",
-              "Daniela/Tiffany: pilot transitions toward standard practice after **four-month** mark; team to **consolidate coach and weight management streams** once pilot concludes."
+              "Weight management report ready; GLP page to be added by end of month and reviewed with Simranjit before send-out.",
+              "Consolidating coach and weight management streams for status reporting."
             ],
             "targetDate": "",
             "availabilityNotes": "Renewal: 10/24/2026 · Available Days: 3",
@@ -547,7 +577,7 @@
             ],
             "bullets": [
               "ZealCare Dashboard updated with new utilization metrics.",
-              "Proposal to use remaining support day for **badge-count filter** (session attendance / captain badges); Sabina/Gideon to confirm interest with ZealCare."
+              "Proposal to use remaining support day for badge-count filter (session attendance / captain badges); Sabina/Gideon to confirm interest with ZealCare."
             ],
             "targetDate": "",
             "availabilityNotes": "Renewal: 10/15/2026 · Available Days: 1.5",

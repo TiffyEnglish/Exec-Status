@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/**
+/
  * Reads Jira issue keys from data/example-merged.json (nested jiraIssues[].key),
  * pulls each issue via Jira Cloud REST API, resolves a "% Complete"–style field where possible,
  * and writes updated percentComplete onto each jiraIssues[] object.

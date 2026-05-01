@@ -155,7 +155,7 @@ table.status-table {
 }
 
 .status-table-client thead th.col-client-name {
-  width: 22%;
+  width: 16%;
 }
 
 .status-table-client thead th.col-service {
@@ -164,11 +164,11 @@ table.status-table {
 }
 
 .status-table-client thead th.col-client-owners {
-  width: 11%;
+  width: 8%;
 }
 
 .status-table-client thead th.col-status-updates {
-  width: 36%;
+  width: 45%;
   min-width: 0;
 }
 
@@ -178,15 +178,15 @@ table.status-table {
 
 /* 4-column variant when Service column hidden */
 .status-table-client.status-table-client--no-service thead th.col-client-name {
-  width: 26%;
+  width: 20%;
 }
 
 .status-table-client.status-table-client--no-service thead th.col-client-owners {
-  width: 13%;
+  width: 10%;
 }
 
 .status-table-client.status-table-client--no-service thead th.col-status-updates {
-  width: 46%;
+  width: 55%;
 }
 
 .status-table-client.status-table-client--no-service thead th.col-client-timeline {
@@ -235,7 +235,7 @@ table.status-table {
 }
 
 .status-table-product--no-status.status-table-product--in-dev-metrics thead th.col-name {
-  width: 18%;
+  width: 15%;
 }
 
 .status-table-product--no-status.status-table-product--in-dev-metrics thead th.col-owner {
@@ -243,30 +243,33 @@ table.status-table {
 }
 
 .status-table-product--no-status.status-table-product--in-dev-metrics thead th.col-status-updates {
-  width: 31%;
+  width: 41%;
 }
 
 .status-table-product--in-dev-metrics thead th.col-eaf {
-  width: 9%;
-  min-width: 4.75rem;
+  width: 5%;
+  min-width: 0;
   font-size: 0.82rem;
   line-height: 1.25;
   white-space: normal;
 }
 
 .status-table-product--in-dev-metrics thead th.col-pct-complete {
-  width: 9%;
-  min-width: 4rem;
+  width: 7%;
+  min-width: 0;
 }
 
 .status-table-product--in-dev-metrics thead th.col-etc {
-  width: 8%;
-  min-width: 3.25rem;
+  width: 5%;
+  min-width: 0;
 }
 
-.status-table-product--in-dev-metrics thead th.col-product-target {
-  width: 8%;
-  min-width: 4rem;
+/* Must beat `.status-table.status-table-product--no-status thead th.col-product-target` (18%) */
+.status-table.status-table-product--no-status.status-table-product--in-dev-metrics thead th.col-product-target,
+.status-table.status-table-product--no-status.status-table-product--in-dev-metrics tbody td.col-product-target {
+  width: 10%;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .col-project-group {
@@ -296,6 +299,11 @@ table.status-table {
 
 .status-table-product--in-dev-metrics .jira-metric {
   font-variant-numeric: tabular-nums;
+}
+
+/* In narrow Target column, let dates wrap (global .target-date-line uses nowrap) */
+.status-table-product--in-dev-metrics .col-product-target .target-date-line {
+  white-space: normal;
 }
 
 .status-table-product .col-name,
@@ -417,4 +425,11 @@ footer.confidential {
   margin-top: 2rem;
   font-size: 0.72rem;
   color: #666;
+}
+
+@media print {
+  .client-report {
+    break-before: page;
+    page-break-before: always;
+  }
 }

@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 /**
- * Reads schema-conform JSON (see ../data/example-merged.json) and writes dist/status.html
+ * Reads schema-conform merged data (JSON) and writes dist/status.html.
+ * Default input: data/example-merged.json
+ * Override: EXEC_STATUS_MERGED (repo-relative or absolute), or pass a path as argv[2].
  * Usage: node scripts/render.mjs [path/to/input.json]
  */
 import fs from 'node:fs';
@@ -9,7 +11,56 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
-const INPUT = process.argv[2] || path.join(ROOT, 'data', 'example-merged.json');
+
+/** Load `.env.local` from repo root; does not override existing env vars. */
+function loadEnvLocalOptional() {
+  const fp = path.join(ROOT, '.env.local');
+  if (!fs.existsSync(fp)) return;
+  const raw = fs.readFileSync(fp, 'utf8');
+  for (const line of raw.split(/\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    const eq = trimmed.indexOf('=');
+    if (eq === -1) continue;
+    const k = trimmed.slice(0, eq).trim();
+    let v = trimmed.slice(eq + 1).trim();
+    if (
+      (v.startsWith('"') && v.endsWith('"')) ||
+      (v.startsWith("'") && v.endsWith("'"))
+    ) {
+      v = v.slice(1, -1);
+    }
+    if (k && process.env[k] === undefined) process.env[k] = v;
+  }
+}
+
+loadEnvLocalOptional();
+
+function resolveInputPath(p) {
+  if (!p || !String(p).trim()) return null;
+  const raw = String(p).trim();
+  return path.isAbsolute(raw) ? raw : path.join(ROOT, raw);
+}
+
+function defaultMergedInputPath() {
+  return path.join(ROOT, 'data', 'example-merged.json');
+}
+
+const execMerged = resolveInputPath(process.env.EXEC_STATUS_MERGED);
+const argvMerged = resolveInputPath(process.argv[2]);
+
+const INPUT = execMerged || argvMerged || defaultMergedInputPath();
+
+const inputPickReason = execMerged
+  ? 'EXEC_STATUS_MERGED'
+  : argvMerged
+    ? 'cli path'
+    : 'default · data/example-merged.json';
+
+function loadMerged(filePath) {
+  const raw = fs.readFileSync(filePath, 'utf8');
+  return JSON.parse(raw);
+}
 const DIST = path.join(ROOT, 'dist');
 const OUT_FILE = path.join(DIST, 'status.html');
 
@@ -51,7 +102,7 @@ function stripLocalDate(d) {
 }
 
 /**
- * Calendar date from ISO timestamp prefix `YYYY-MM-DD` — interpret as that **civil** date for the report
+ * Calendar date from ISO timestamp prefix `YYYY-MM-DD` — interpret as that civil date for the report
  * (not UTC instant → local), avoiding header / reference-date off-by-one near timezone boundaries.
  */
 function calendarDateFromIsoPrefix(iso) {
@@ -110,21 +161,26 @@ function nextWednesdayOnOrAfterCal(day) {
 }
 
 /**
- * Nominal completion = ceil(todos × 1.5 + inProgress × 1) working days after reference date,
+ * Nominal completion = ceil(workload ETC units) working days after reference date,
  * then snap up to next Wednesday on the calendar (release train).
+ * ETC units match workloadEtcSum (To Do / In Progress / Code Review / QA Review weights).
  */
-function computedReleaseWednesday(todoCount, inProgressCount, referenceDate) {
-  const wd = Math.ceil(
-    Math.max(0, todoCount) * 1.5 + Math.max(0, inProgressCount) - 1e-12
-  );
+function computedReleaseWednesday(workloadUnits, referenceDate) {
+  const wd = Math.ceil(Math.max(0, workloadUnits) - 1e-12);
   const nominal = addWholeWorkingDaysAfterStart(referenceDate, wd);
   return nextWednesdayOnOrAfterCal(nominal);
 }
 
+const WORKLOAD_COUNT_KEYS = [
+  'todoCount',
+  'inProgressCount',
+  'codeReviewCount',
+  'qaReviewCount',
+  'closedCount'
+];
+
 function issueShouldComputeTarget(issue) {
-  return (
-    issue?.todoCount != null || issue?.inProgressCount != null
-  );
+  return WORKLOAD_COUNT_KEYS.some((k) => issue?.[k] != null);
 }
 
 function effectiveWorkloadTodo(issue) {
@@ -137,12 +193,30 @@ function effectiveWorkloadInProgress(issue) {
     : 0;
 }
 
-/** ETC from workload: (# To Do × 1.5) + (# In Progress × 1); only when counts are present. */
+function effectiveWorkloadCodeReview(issue) {
+  return issue.codeReviewCount != null
+    ? Math.max(0, Number(issue.codeReviewCount) || 0)
+    : 0;
+}
+
+function effectiveWorkloadQaReview(issue) {
+  return issue.qaReviewCount != null
+    ? Math.max(0, Number(issue.qaReviewCount) || 0)
+    : 0;
+}
+
+/**
+ * ETC from workload when any workload count is set:
+ * To Do × 1.5 + In Progress × 1 + Code Review × 0.5 + QA Review × 0.25.
+ * (Closed is tracked for reporting only; it does not add to ETC.)
+ */
 function workloadEtcSum(issue) {
   if (!issueShouldComputeTarget(issue)) return null;
   return (
     effectiveWorkloadTodo(issue) * 1.5 +
-    effectiveWorkloadInProgress(issue) * 1
+    effectiveWorkloadInProgress(issue) * 1 +
+    effectiveWorkloadCodeReview(issue) * 0.5 +
+    effectiveWorkloadQaReview(issue) * 0.25
   );
 }
 
@@ -219,11 +293,9 @@ function issueTargetDisplayString(issue, referenceDate) {
     return displayTargetLabel(String(issue.targetDate).trim());
   }
   if (referenceDate != null && issueShouldComputeTarget(issue)) {
-    const d = computedReleaseWednesday(
-      effectiveWorkloadTodo(issue),
-      effectiveWorkloadInProgress(issue),
-      referenceDate
-    );
+    const units = workloadEtcSum(issue);
+    if (units == null) return '';
+    const d = computedReleaseWednesday(units, referenceDate);
     return formatTargetDateNumeric(d);
   }
   return '';
@@ -303,7 +375,7 @@ function inDevProjectGroupRank(projectGroup) {
   if (g === 'trackers') return 0;
   if (g === 'integration' || g === 'device integration') return 1;
   if (g === 'other') return 2;
-  if (g === 'ops platform improvements') return 3;
+  if (g === 'ops' || g === 'ops platform improvements') return 3;
   return 999;
 }
 
@@ -694,7 +766,7 @@ function renderSection(section, kind, meta = {}) {
   }
 
   const showServiceCol = true;
-  const head = `<tr><th class="col-client-name">Name</th><th class="col-service">Service</th><th class="col-client-owners">Owner(s)</th><th class="col-status-updates">Status updates</th><th class="col-client-timeline">Timeline / Availability</th></tr>`;
+  const head = `<tr><th class="col-client-name">Name</th><th class="col-service">Service</th><th class="col-client-owners">Owner</th><th class="col-status-updates">Status updates</th><th class="col-client-timeline">Timeline / Availability</th></tr>`;
 
   const bodyRows = section.rows.map((r) =>
     renderClientRow(r, showServiceCol, referenceDateForTargets)
@@ -746,6 +818,7 @@ function buildHtml(data) {
 
     ${(prod.sections || []).map((s) => renderSection(s, 'product', meta)).join('\n')}
 
+    <div class="client-report">
     <hr style="margin: 2rem 0; border: none; border-top: 2px dashed #ddd" />
 
     <header class="report-header">
@@ -753,17 +826,31 @@ function buildHtml(data) {
     </header>
 
     ${(cli.sections || []).map((s) => renderSection(s, 'client', meta)).join('\n')}
+    </div>
 
-    <footer class="confidential">\u00a9 Nexi Health Inc. Confidential and Proprietary. &mdash; Status export for internal distribution.</footer>
+    <footer class="confidential">\u00a9 NexJ Health Inc. Confidential and Proprietary. &mdash; Status export for internal distribution.</footer>
   </article>
 </body>
 </html>`;
 }
 
-const raw = fs.readFileSync(INPUT, 'utf8');
-const data = JSON.parse(raw);
+const data = loadMerged(INPUT);
+const inputRel = path.relative(ROOT, INPUT).replace(/\\/g, '/');
+let inputMtime = '';
+try {
+  inputMtime = new Date(fs.statSync(INPUT).mtimeMs).toISOString();
+} catch {
+  /* ignore */
+}
+console.log(
+  `Read ${inputRel}${inputMtime ? ` (modified ${inputMtime})` : ''} · ${inputPickReason}`
+);
 fs.mkdirSync(DIST, { recursive: true });
 let html = buildHtml(data);
+html = html.replace(
+  '<body>',
+  `<body>\n<!-- merged input: ${esc(inputRel)} · file mtime ${esc(inputMtime || 'unknown')} · pick: ${esc(inputPickReason)} · built ${esc(new Date().toISOString())} -->`
+);
 // Embed CSS for portable single-file copy (Teams email attach / SharePoint upload)
 const cssPath = path.join(ROOT, 'styles', 'report.css');
 if (fs.existsSync(cssPath)) {

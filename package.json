@@ -6,8 +6,10 @@
   "description": "Phase 1 executive HTML status: Jira + meeting notes (merged JSON → dist/status.html)",
   "scripts": {
     "render": "node scripts/render.mjs",
+    "render:json": "node scripts/render.mjs data/example-merged.json",
     "render:example": "node scripts/render.mjs data/example-merged.json",
     "jira:percent": "node scripts/jira-pull-percent-complete.mjs",
+    "jira:workload": "node scripts/jira-pull-epic-workloads.mjs",
     "jira:eaf": "node scripts/jira-sync-eaf.mjs",
     "jira:eaf:apply": "node scripts/jira-sync-eaf.mjs --patch data/jira-eaf-patch.json"
   }
